@@ -132,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, InputFragment)
+                .commit();
         //Intent intent = new Intent (SelectClassFragment.this, MainActivity);
 
 
