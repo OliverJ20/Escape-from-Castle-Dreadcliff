@@ -23,18 +23,16 @@
                 android:layout_weight="1" >
 
                 <Button
-                    android:id="@+id/movebtn"
+                    android:id="@+id/topLEFTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:text="Move" />
+                    android:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/inspBTN"
+                    android:id="@+id/topRIGHTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:text="Inspect" />
+                    android:layout_weight="1" />
             </TableRow>
 
             <TableRow
@@ -44,18 +42,16 @@
                 android:layout_weight="1" >
 
                 <Button
-                    android:id="@+id/invBTN"
+                    android:id="@+id/bottomLEFTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:text="Inventory" />
+                    android:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/combBTN"
+                    android:id="@+id/bottomRIGHTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:text="Combat" />
+                    android:layout_weight="1" />
             </TableRow>
 
         </TableLayout>
