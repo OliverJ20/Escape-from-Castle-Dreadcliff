@@ -19,6 +19,7 @@ import android.widget.Button;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.content.Intent;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private RogueStoryFragment rogueStoryFragment;
     private int selectedOption = 0;
     private String selectedString = "0";
+    private String PlayerClass = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,16 +108,18 @@ public class MainActivity extends AppCompatActivity {
 
         if (selectedOption == 1) {
           //Button button = (Button) findViewById(R.id.option1RadioButton);
-            getSupportFragmentManager()
+           getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, barbStoryFragment)
                     .commit();
+            PlayerClass = "Barbarian";
         }
         if (selectedOption == 2) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, mageStoryFragment)
                     .commit();
+            PlayerClass = "Mage";
 
 
         }
@@ -124,10 +128,24 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.fragment_container, rogueStoryFragment)
                     .commit();
+            PlayerClass = "Rogue";
 
 
         }
+        //Intent intent = new Intent (SelectClassFragment.this, MainActivity);
+
+
+
     }
+    public String Intro()
+    {
+        String I = "You awake to the sound of thunder echoing from outside" +
+                "\nthe sound of rain hitting stone." +
+                "\nYou find yourself in a small jail cell, with a single torch on the" +
+                "\non the other side lighting the room. ";
+        return I;
+    }
+
 
 
 }

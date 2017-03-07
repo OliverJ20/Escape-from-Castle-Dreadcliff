@@ -1,13 +1,38 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.deadmountain.escapefromcastledreadcliff.MageStoryFragment">
+    android:padding="0dp"
+    android:paddingEnd="0dp"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingStart="0dp"
+    android:paddingTop="0dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="you are a Mage" />
+        android:id="@+id/mage_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="you are a mage"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"/>
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mage_header"
+        android:id="@+id/mage_button_container"
+        android:layout_alignParentStart="true"></RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mage_button_container"
+        android:id="@+id/mage_text_container"
+        android:layout_alignParentStart="true"></RelativeLayout>
+
+
+
+</RelativeLayout>
