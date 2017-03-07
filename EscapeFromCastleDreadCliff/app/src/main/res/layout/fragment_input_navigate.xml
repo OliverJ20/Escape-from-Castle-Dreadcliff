@@ -36,7 +36,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/navtableRow1"
+                android:id="@+id/navtableRow2"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1" >
