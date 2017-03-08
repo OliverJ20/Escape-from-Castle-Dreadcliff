@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.RadioButton;
@@ -19,7 +20,10 @@ import android.widget.Button;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
+
 import android.content.Intent;
+
 
 import java.util.ArrayList;
 
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
+
+    private String I = "";
+    private int J = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     //     final Button button = (Button) findViewById(R.id.newGamebutton);
 
     // }
+
 
     public void startGameHandler(View view) {
         view.setVisibility(View.GONE);
@@ -82,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.button_container, inputNavFragment)
                 .commit();
     }
+
     public void onRadioButtonClicked(View view)
     {
         boolean checked = ((RadioButton)view).isChecked();
@@ -157,15 +166,42 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     public String Intro()
     {
-        String I = "You awake to the sound of thunder echoing from outside" +
+         I = "You awake to the sound of thunder echoing from outside" +
                 "\nthe sound of rain hitting stone." +
                 "\nYou find yourself in a small jail cell, with a single torch on the" +
                 "\non the other side lighting the room. ";
+
+
         return I;
+
     }
 
+
+   public void inspectButtonHandler(View view)
+    {
+        if (PlayerClass == "Barbarian")
+        {
+             TextView Inspect = (TextView) barbStoryFragment.getActivity().findViewById(R.id.intro_id);
+            Inspect.setText("you inspect the room");
+        }
+        if (PlayerClass == "Mage")
+        {
+            TextView Inspect = (TextView) mageStoryFragment.getActivity().findViewById(R.id.intro_id);
+            Inspect.setText("you inspect the room");
+        }
+        if (PlayerClass == "Rogue")
+        {
+            TextView Inspect = (TextView) rogueStoryFragment.getActivity().findViewById(R.id.intro_id);
+            Inspect.setText("you inspect the room");
+        }
+        
+
+
+    }
 
 
 }

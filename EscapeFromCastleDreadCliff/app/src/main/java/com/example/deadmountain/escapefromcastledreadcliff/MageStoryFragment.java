@@ -49,6 +49,7 @@ public class MageStoryFragment extends Fragment {
 
         TextView Intro = new TextView(mContext);
         mmRelativeLayout.addView(Intro);
+        Intro.setId(R.id.intro_id);
         Intro.setText(((MainActivity) getActivity()).Intro());
 
 

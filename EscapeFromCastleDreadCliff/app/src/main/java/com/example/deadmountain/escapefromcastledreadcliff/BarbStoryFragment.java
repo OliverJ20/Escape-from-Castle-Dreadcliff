@@ -29,6 +29,8 @@ public class BarbStoryFragment extends Fragment {
 
     public BarbStoryFragment() {
         // Required empty public constructor
+
+
     }
 
 
@@ -57,12 +59,47 @@ public class BarbStoryFragment extends Fragment {
         btn.setText("Test button");
         Log.i ("testing",((MainActivity) getActivity()).Intro());
 
-        TextView Intro = new TextView(mContext);
+       final TextView Intro = new TextView(mContext);
         mmRelativeLayout.addView(Intro);
+
         Intro.setText(((MainActivity) getActivity()).Intro());
+        Intro.setId(R.id.intro_id);
+        btn.setId(R.id.testthing);
+
+
+
+
+
+
+               //Intro.getId());
+
+
+
+       // Button button = (Button) getView().findViewById(R.id.inspBTN);
+
+        btn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view)
+            {
+               // Button b = (Button) view;
+                Intro.setText("test");
+
+            }
+        });
+
+
+
+
+
 
 
         return view;
+
+    }
+
+   public void setText(String mtext)
+    {
+      //  Button button = (Button) getView().findViewById(R.id.testthing);
+
 
     }
 

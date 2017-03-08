@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/barb_header"
+
         android:id="@+id/barb_button_container"
         android:layout_alignParentStart="true"></RelativeLayout>
 
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/barb_button_container"
         android:id="@+id/barb_text_container"
+        android:text =""
         android:layout_alignParentStart="true"></RelativeLayout>
 
 
