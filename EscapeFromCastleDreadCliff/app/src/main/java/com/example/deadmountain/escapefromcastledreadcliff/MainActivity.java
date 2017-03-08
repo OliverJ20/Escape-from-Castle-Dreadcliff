@@ -59,6 +59,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+//        if (getFragmentManager().getBackStackEntryCount() > 0) {
+//            getFragmentManager().popBackStack();
+//        } else {
+//            super.onBackPressed();
+//        }
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputFragment )
+                .commit();
+    }
 
     // public void newGame()
     // {
@@ -72,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
+                .addToBackStack("test?")
                 .replace(R.id.fragment_container, selectClassFragment)
                 .commit();
 
@@ -87,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
     public void onMoveButtonClicked(View view) {
         getSupportFragmentManager()
                 .beginTransaction()
+                .addToBackStack("navinput")
                 .replace(R.id.button_container, inputNavFragment)
                 .commit();
     }
