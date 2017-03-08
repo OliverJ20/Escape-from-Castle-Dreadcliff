@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private MageStoryFragment mageStoryFragment;
     private RogueStoryFragment rogueStoryFragment;
     private InputFragment inputFragment;
+    private InputNavFragment inputNavFragment;
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mageStoryFragment = new MageStoryFragment();
         rogueStoryFragment = new RogueStoryFragment();
         inputFragment = new InputFragment();
+        inputNavFragment = new InputNavFragment();
 
     }
 
@@ -74,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onMoveButtonClicked(View view) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputNavFragment)
+                .commit();
+    }
     public void onRadioButtonClicked(View view)
     {
         boolean checked = ((RadioButton)view).isChecked();
@@ -114,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
            getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, barbStoryFragment)
-                    .add(R.id.fragment_container, inputFragment)
                     .commit();
             PlayerClass = "Barbarian";
         }
