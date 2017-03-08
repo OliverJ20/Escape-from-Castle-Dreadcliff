@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private BarbStoryFragment barbStoryFragment;
     private MageStoryFragment mageStoryFragment;
     private RogueStoryFragment rogueStoryFragment;
+    private InputFragment inputFragment;
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         barbStoryFragment = new BarbStoryFragment();
         mageStoryFragment = new MageStoryFragment();
         rogueStoryFragment = new RogueStoryFragment();
+        inputFragment = new InputFragment();
 
     }
 
@@ -106,11 +108,13 @@ public class MainActivity extends AppCompatActivity {
     public void buttonSubmitClick(View view)
     {
 
+
         if (selectedOption == 1) {
           //Button button = (Button) findViewById(R.id.option1RadioButton);
            getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, barbStoryFragment)
+                    .add(R.id.fragment_container, inputFragment)
                     .commit();
             PlayerClass = "Barbarian";
         }
@@ -118,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, mageStoryFragment)
+
                     .commit();
             PlayerClass = "Mage";
 
@@ -127,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, rogueStoryFragment)
+
+
+
                     .commit();
             PlayerClass = "Rogue";
 
@@ -134,8 +142,9 @@ public class MainActivity extends AppCompatActivity {
         }
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.button_container, InputFragment)
+                .replace(R.id.button_container, inputFragment)
                 .commit();
+
         //Intent intent = new Intent (SelectClassFragment.this, MainActivity);
 
 
