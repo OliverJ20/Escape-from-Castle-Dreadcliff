@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
             PlayerClass = "Barbarian";
         }
-        if (selectedOption == 2) {
+        else if (selectedOption == 2) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, mageStoryFragment)
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        if (selectedOption == 3) {
+        else if (selectedOption == 3) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, rogueStoryFragment)
@@ -203,12 +203,12 @@ public class MainActivity extends AppCompatActivity {
              TextView Inspect = (TextView) barbStoryFragment.getActivity().findViewById(R.id.intro_id);
             Inspect.setText("you inspect the room");
         }
-        if (PlayerClass == "Mage")
+        else if (PlayerClass == "Mage")
         {
             TextView Inspect = (TextView) mageStoryFragment.getActivity().findViewById(R.id.intro_id);
             Inspect.setText("you inspect the room");
         }
-        if (PlayerClass == "Rogue")
+       else if (PlayerClass == "Rogue")
         {
             TextView Inspect = (TextView) rogueStoryFragment.getActivity().findViewById(R.id.intro_id);
             Inspect.setText("you inspect the room");
