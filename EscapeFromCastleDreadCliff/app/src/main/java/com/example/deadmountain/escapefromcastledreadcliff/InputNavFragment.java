@@ -30,6 +30,10 @@ public class InputNavFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_input_navigate, container, false);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+
+
+
         return view;
 
     }

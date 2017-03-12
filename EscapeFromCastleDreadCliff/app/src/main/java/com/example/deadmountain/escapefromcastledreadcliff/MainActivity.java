@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
+    private String PlayerRoom = "";
+    private String inspectRoom = "";
+
 
     private String I = "";
     private int J = 0;
@@ -99,11 +102,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMoveButtonClicked(View view) {
+
+
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("navinput")
                 .replace(R.id.button_container, inputNavFragment)
                 .commit();
+
     }
 
     public void onRadioButtonClicked(View view)
@@ -148,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragment_container, barbStoryFragment)
                     .commit();
             PlayerClass = "Barbarian";
+            PlayerRoom = "Dungeon";
         }
         else if (selectedOption == 2) {
             getSupportFragmentManager()
@@ -156,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
                     .commit();
             PlayerClass = "Mage";
+            PlayerRoom = "Dungeon";
 
 
         }
@@ -168,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
                     .commit();
             PlayerClass = "Rogue";
+            PlayerRoom = "Dungeon";
 
 
         }
@@ -194,24 +204,46 @@ public class MainActivity extends AppCompatActivity {
         return I;
 
     }
+   // onInputNavButtonClicked
+
+    public String InspectRoom()
+    {
+        if (PlayerRoom == "Dungeon")
+        {
+            inspectRoom = "your in the dungeon";
+
+             //   Button button = (Button) inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn);
+                //button.setText("N");
+           // Log.i("testo", (inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn).toString()));
+
+            return inspectRoom;
+        }
+
+        return"";
+    }
+
+
+
 
 
    public void inspectButtonHandler(View view)
     {
+
+
         if (PlayerClass == "Barbarian")
         {
              TextView Inspect = (TextView) barbStoryFragment.getActivity().findViewById(R.id.intro_id);
-            Inspect.setText("you inspect the room");
+            Inspect.setText(InspectRoom());
         }
         else if (PlayerClass == "Mage")
         {
             TextView Inspect = (TextView) mageStoryFragment.getActivity().findViewById(R.id.intro_id);
-            Inspect.setText("you inspect the room");
+            Inspect.setText(InspectRoom());
         }
        else if (PlayerClass == "Rogue")
         {
             TextView Inspect = (TextView) rogueStoryFragment.getActivity().findViewById(R.id.intro_id);
-            Inspect.setText("you inspect the room");
+            Inspect.setText(InspectRoom());
         }
         
 
