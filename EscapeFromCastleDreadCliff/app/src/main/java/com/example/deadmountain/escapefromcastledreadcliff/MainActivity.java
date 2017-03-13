@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     Room gameRooms = new Room ("You are in a dark dungeon", 0, "Dungeon");
 
 
+
     private String intro = "";
     private int J = 0;
 
@@ -234,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         return"";*/
-        return gameRooms.getRoomInspect();
+        return gameRooms.getRoomInspect(PlayerClass);
     }
 
 
