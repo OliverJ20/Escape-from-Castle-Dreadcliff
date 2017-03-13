@@ -20,6 +20,7 @@ import android.widget.Button;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 
 import android.content.Intent;
@@ -43,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
     private String PlayerClass = "";
     private String PlayerRoom = "";
     private String inspectRoom = "";
+    Rooms gameRooms = new Rooms ("You are in a dark dungeon", 0, "Dungeon");
 
 
-    private String I = "";
+    private String intro = "";
     private int J = 0;
 
     @Override
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         rogueStoryFragment = new RogueStoryFragment();
         inputFragment = new InputFragment();
         inputNavFragment = new InputNavFragment();
+
 
     }
 
@@ -81,6 +84,37 @@ public class MainActivity extends AppCompatActivity {
     //     final Button button = (Button) findViewById(R.id.newGamebutton);
 
     // }
+
+///CREATE OBJECTS !.
+    public class Rooms {
+    private String inspectTheRoom = "";
+    private int roomID = 0;
+    private String roomName = "";
+
+    //constructor
+    public Rooms(String a, int b, String c)
+    {
+        inspectTheRoom = a; ///We can have it so you call rooms to set all the room info or we could have present inspect room variables
+                            ///setup that we insert
+                            ///I also assume that when the onclick is called to move the player is when the Rooms will be called to setup the new room.
+        roomID = b;
+        roomName = c;
+    }
+
+    public String getRoom()
+    {
+        return  roomName;
+    }
+    public String getRoomInspect()
+    {
+        return inspectTheRoom;
+    }
+    public int getRoomID()
+    {
+        return roomID;
+    }
+}
+
 
 
     public void startGameHandler(View view) {
@@ -195,20 +229,25 @@ public class MainActivity extends AppCompatActivity {
 
     public String Intro()
     {
-         I = "You awake to the sound of thunder echoing from outside" +
+         intro = "You awake to the sound of thunder echoing from outside" +
                 "\nthe sound of rain hitting stone." +
                 "\nYou find yourself in a small jail cell, with a single torch on the" +
                 "\non the other side lighting the room. ";
 
 
-        return I;
+
+
+
+
+
+        return intro;
 
     }
    // onInputNavButtonClicked
 
     public String InspectRoom()
     {
-        if (PlayerRoom == "Dungeon")
+       /* if (PlayerRoom == "Dungeon")
         {
             inspectRoom = "your in the dungeon";
 
@@ -219,7 +258,10 @@ public class MainActivity extends AppCompatActivity {
             return inspectRoom;
         }
 
-        return"";
+
+
+        return"";*/
+        return gameRooms.getRoomInspect();
     }
 
 
