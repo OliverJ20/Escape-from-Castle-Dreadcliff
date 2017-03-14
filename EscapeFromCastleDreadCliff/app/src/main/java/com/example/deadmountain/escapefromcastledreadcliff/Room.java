@@ -11,15 +11,13 @@ public class Room {
     private String barbarianInspect = ", your a barbarian";
     private String mageInspect = ", your a mage";
     private String rogueInspect = ",  your a rogue";
-    private int connectedRooms = 0; // maximum of 4
+    private int connectedRoomsTotal = 0; // maximum of 4
+    private int[] connectedRooms = new int[4];
 
 
     //constructor
-    public Room(String inspect, int id, String name)
-    {
-        inspectTheRoom = inspect; ///We can have it so you call rooms to set all the room info or we could have present inspect room variables
-        ///setup that we insert
-        ///I also assume that when the onclick is called to move the player is when the Rooms will be called to setup the new room.
+    public Room(String inspect, int id, String name) {
+        inspectTheRoom = inspect;
         roomID = id;
         roomName = name;
     }

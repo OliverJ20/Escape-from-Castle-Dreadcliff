@@ -1,5 +1,6 @@
 package com.example.deadmountain.escapefromcastledreadcliff;
 
+import java.util.ArrayList;
 
 import android.os.AsyncTask;
 import android.os.Build;
@@ -42,9 +43,15 @@ public class MainActivity extends AppCompatActivity {
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
-    private String PlayerRoom = "";
+    private Integer PlayerRoom = 0;
     private String inspectRoom = "";
-    Room gameRooms = new Room ("You are in a dark dungeon", 0, "Dungeon");
+    private RoomCreation allRooms;
+
+//    ArrayList<Room> allRooms = new ArrayList<Room>();
+//    Room gameRooms = new Room ("You are in a dark dungeon", 0, "Dungeon");
+//    boolean test = allRooms.add(gameRooms);
+
+    //RoomCreation test = new RoomCreation();
 
 
 
@@ -62,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         rogueStoryFragment = new RogueStoryFragment();
         inputFragment = new InputFragment();
         inputNavFragment = new InputNavFragment();
+        allRooms = new RoomCreation();
+        allRooms.createAllRooms();
 
 
     }
@@ -163,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragment_container, barbStoryFragment)
                     .commit();
             PlayerClass = "Barbarian";
-            PlayerRoom = "Dungeon";
+            PlayerRoom = 0;
         }
         else if (selectedOption == 2) {
             getSupportFragmentManager()
@@ -172,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
                     .commit();
             PlayerClass = "Mage";
-            PlayerRoom = "Dungeon";
+            PlayerRoom = 0;
 
 
         }
@@ -185,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
                     .commit();
             PlayerClass = "Rogue";
-            PlayerRoom = "Dungeon";
+            PlayerRoom = 0;
 
 
         }
@@ -235,7 +244,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         return"";*/
-        return gameRooms.getRoomInspect(PlayerClass);
+        Integer help = 0;
+        return allRooms.getRoomFromID(PlayerRoom).getRoomInspect(PlayerClass);
+        //return gameRooms.getRoomInspect(PlayerClass);
     }
 
 
