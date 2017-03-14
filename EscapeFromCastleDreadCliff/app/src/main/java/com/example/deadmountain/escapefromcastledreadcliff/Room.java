@@ -16,10 +16,15 @@ public class Room {
 
 
     //constructor
-    public Room(String inspect, int id, String name) {
+    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4) {
         inspectTheRoom = inspect;
         roomID = id;
         roomName = name;
+        this.connectedRoomsTotal = connectedRooms;
+        this.connectedRooms[0] = room1;
+        this.connectedRooms[1] = room2;
+        this.connectedRooms[2] = room3;
+        this.connectedRooms[3] = room4;
     }
 
     public String getRoom() {
