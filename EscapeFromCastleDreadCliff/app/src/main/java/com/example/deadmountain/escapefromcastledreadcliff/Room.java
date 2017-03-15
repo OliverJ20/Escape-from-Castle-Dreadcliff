@@ -42,11 +42,13 @@ public class Room {
     private String mageInspect = ", your a mage";
     private String rogueInspect = ",  your a rogue";
     private int connectedRoomsTotal = 0; // maximum of 4
+    private String roomDirectionsTotal = "";
     private int[] connectedRooms = new int[4];
+    private String[] roomDirections = new String[4];
 
 
     //constructor
-    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4) {
+    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String roomDirections, String Drt1, String Drt2, String Drt3, String Drt4) {
         inspectTheRoom = inspect;
         roomID = id;
         roomName = name;
@@ -55,6 +57,18 @@ public class Room {
         this.connectedRooms[1] = room2;
         this.connectedRooms[2] = room3;
         this.connectedRooms[3] = room4;
+
+        this.roomDirectionsTotal = roomDirections;
+        this.roomDirections[0] = Drt1;
+        this.roomDirections[1] = Drt2;
+        this.roomDirections[2] = Drt3;
+        this.roomDirections[3] = Drt4;
+
+    }
+    public String getConnectRooms(int roomIndex)
+
+    {
+        return this.roomDirections[roomIndex];
     }
 
     public String getRoom() {

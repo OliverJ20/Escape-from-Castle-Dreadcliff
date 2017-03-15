@@ -41,6 +41,44 @@ public class InputNavFragment extends Fragment {
         bottomLEFTbtn.setText(((MainActivity) getActivity()).BottomLeftbutton());
         bottomRightbtn.setText(((MainActivity) getActivity()).BottomRightbutton());
 
+        if ( ((MainActivity) getActivity()).topLeftbutton()== "")
+        {
+            topLEFTbtn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            topLEFTbtn.setVisibility(View.VISIBLE);
+        }
+
+        if ( ((MainActivity) getActivity()).topRightbutton()== "")
+        {
+            topRIGHTbtn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            topRIGHTbtn.setVisibility(View.VISIBLE);
+        }
+
+        if ( ((MainActivity) getActivity()).BottomLeftbutton()== "")
+        {
+            bottomLEFTbtn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            bottomLEFTbtn.setVisibility(View.VISIBLE);
+        }
+
+        if ( ((MainActivity) getActivity()).BottomRightbutton()== "")
+        {
+            bottomRightbtn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            bottomRightbtn.setVisibility(View.VISIBLE);
+        }
+
+
+
 
 
 

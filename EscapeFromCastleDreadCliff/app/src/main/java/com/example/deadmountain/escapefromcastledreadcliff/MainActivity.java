@@ -249,21 +249,25 @@ public class MainActivity extends AppCompatActivity {
 
         //return gameRooms.getRoomInspect(PlayerClass);
     }
+
+
     public String topRightbutton()
     {
-        return "N";
+       return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0);
+
     }
     public String topLeftbutton()
     {
-        return "E";
+        return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(1);
     }
     public String BottomLeftbutton()
     {
-        return "W";
+        return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(2);
     }
     public String BottomRightbutton()
     {
-        return "S";
+        return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(3);
+
     }
 
 
