@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
     // private NewGameFragment newGamefragment;
     // private SelectClassFragment selectClassfragment;
     private SelectClassFragment selectClassFragment;
-    private BarbStoryFragment barbStoryFragment;
-    private MageStoryFragment mageStoryFragment;
-    private RogueStoryFragment rogueStoryFragment;
+    private StoryFragment StoryFragment;
     private InputFragment inputFragment;
     private InputNavFragment inputNavFragment;
     private int selectedOption = 0;
@@ -64,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //   newGamefragment = new NewGameFragment();
         selectClassFragment = new SelectClassFragment();
-        barbStoryFragment = new BarbStoryFragment();
-        mageStoryFragment = new MageStoryFragment();
-        rogueStoryFragment = new RogueStoryFragment();
+        StoryFragment = new StoryFragment();
         inputFragment = new InputFragment();
         inputNavFragment = new InputNavFragment();
         allRooms = new RoomCreation();
@@ -172,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
           //Button button = (Button) findViewById(R.id.option1RadioButton);
            getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, barbStoryFragment)
+                    .replace(R.id.fragment_container, StoryFragment)
                     .commit();
             PlayerClass = "Barbarian";
             PlayerRoom = 0;
@@ -180,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         else if (selectedOption == 2) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, mageStoryFragment)
+                    .replace(R.id.fragment_container, StoryFragment)
 
                     .commit();
             PlayerClass = "Mage";
@@ -191,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         else if (selectedOption == 3) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, rogueStoryFragment)
+                    .replace(R.id.fragment_container, StoryFragment)
 
 
 
@@ -276,24 +272,11 @@ public class MainActivity extends AppCompatActivity {
 
    public void inspectButtonHandler(View view)
     {
+        TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.intro_id);
+        Inspect.setText(InspectRoom());
 
 
-        if (PlayerClass == "Barbarian")
-        {
-             TextView Inspect = (TextView) barbStoryFragment.getActivity().findViewById(R.id.intro_id);
-            Inspect.setText(InspectRoom());
-        }
-        else if (PlayerClass == "Mage")
-        {
-            TextView Inspect = (TextView) mageStoryFragment.getActivity().findViewById(R.id.intro_id);
-            Inspect.setText(InspectRoom());
-        }
-       else if (PlayerClass == "Rogue")
-        {
-            TextView Inspect = (TextView) rogueStoryFragment.getActivity().findViewById(R.id.intro_id);
-            Inspect.setText(InspectRoom());
-        }
-        
+
 
 
     }

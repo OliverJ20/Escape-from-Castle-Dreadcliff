@@ -24,10 +24,10 @@ import org.w3c.dom.Text;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BarbStoryFragment extends Fragment {
+public class StoryFragment extends Fragment {
 
 
-    public BarbStoryFragment() {
+    public StoryFragment() {
         // Required empty public constructor
 
 
