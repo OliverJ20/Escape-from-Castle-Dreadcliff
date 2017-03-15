@@ -122,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("navinput")
@@ -234,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
         {
             inspectRoom = "your in the dungeon";
 
-             //   Button button = (Button) inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn);
+               Button button = (Button) inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn);
                 //button.setText("N");
            // Log.i("testo", (inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn).toString()));
 
@@ -244,9 +247,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         return"";*/
+       // Button button = (Button) inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn);
         Integer help = 0;
         return allRooms.getRoomFromID(PlayerRoom).getRoomInspect(PlayerClass);
+
         //return gameRooms.getRoomInspect(PlayerClass);
+    }
+    public String topRightbutton()
+    {
+        return "N";
+    }
+    public String topLeftbutton()
+    {
+        return "E";
+    }
+    public String BottomLeftbutton()
+    {
+        return "W";
+    }
+    public String BottomRightbutton()
+    {
+        return "S";
     }
 
 

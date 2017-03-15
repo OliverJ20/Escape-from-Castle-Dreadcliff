@@ -31,6 +31,18 @@ public class InputNavFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_input_navigate, container, false);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
+        Button topLEFTbtn = (Button) view.findViewById(R.id.topLEFTbtn);
+        Button topRIGHTbtn = (Button) view.findViewById(R.id.topRIGHTbtn);
+        Button bottomLEFTbtn = (Button) view.findViewById(R.id.bottomLEFTbtn);
+        Button bottomRightbtn = (Button) view.findViewById(R.id.bottomRIGHTbtn);
+
+        topLEFTbtn.setText(((MainActivity) getActivity()).topLeftbutton());
+        topRIGHTbtn.setText(((MainActivity) getActivity()).topRightbutton());
+        bottomLEFTbtn.setText(((MainActivity) getActivity()).BottomLeftbutton());
+        bottomRightbtn.setText(((MainActivity) getActivity()).BottomRightbutton());
+
+
+
 
 
 
