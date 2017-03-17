@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
-    private Integer PlayerRoom = 0;
+    private Integer PlayerRoom = 1;
     private String inspectRoom = "";
     private RoomCreation allRooms;
 
@@ -140,13 +140,11 @@ public class MainActivity extends AppCompatActivity {
         return allRooms.getRoomFromID(currentRoom).getRoom();
     }
 
+    public Room getRoom(int roomID) {
+        return allRooms.getRoomFromID(roomID);
+    }
+
     public void onMoveButtonClicked(View view) {
-
-
-
-
-
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("navinput")
@@ -155,6 +153,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void test(View view) {
+        this.PlayerRoom = 1;
+    }
+    public void updateStoryFragment() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .detach(StoryFragment)
+                .commitNowAllowingStateLoss();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .attach(StoryFragment)
+                .commitAllowingStateLoss();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputFragment)
+                .commit();
+    }
+    public void onCombatButtonClicked(View view) {
+        updateStoryFragment();
+    }
     public void onRadioButtonClicked(View view)
     {
         boolean checked = ((RadioButton)view).isChecked();
@@ -186,10 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 }
         }
     }
-    public void buttonSubmitClick(View view)
-    {
-
-
+    public void buttonSubmitClick(View view) {
         if (selectedOption == 1) {
           //Button button = (Button) findViewById(R.id.option1RadioButton);
            getSupportFragmentManager()
@@ -203,35 +218,23 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, StoryFragment)
-
                     .commit();
             PlayerClass = "Mage";
             PlayerRoom = 0;
-
-
         }
         else if (selectedOption == 3) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, StoryFragment)
-
-
-
                     .commit();
             PlayerClass = "Rogue";
             PlayerRoom = 0;
-
-
         }
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.button_container, inputFragment)
                 .commit();
-
         //Intent intent = new Intent (SelectClassFragment.this, MainActivity);
-
-
-
     }
 
 
@@ -241,13 +244,6 @@ public class MainActivity extends AppCompatActivity {
                 "\nthe sound of rain hitting stone." +
                 "\nYou find yourself in a small jail cell, with a single torch on the" +
                 "\non the other side lighting the room. ";
-
-
-
-
-
-
-
         return intro;
 
     }

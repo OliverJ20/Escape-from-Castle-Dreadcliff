@@ -29,8 +29,6 @@ public class StoryFragment extends Fragment {
 
     public StoryFragment() {
         // Required empty public constructor
-
-
     }
 
 
@@ -62,7 +60,8 @@ public class StoryFragment extends Fragment {
        final TextView Intro = new TextView(mContext);
         mmRelativeLayout.addView(Intro);
 
-        Intro.setText(((MainActivity) getActivity()).Intro());
+        //Intro.setText(((MainActivity) getActivity()).Intro());
+        Intro.setText(((MainActivity)getActivity()).getRoom(((((MainActivity) getActivity()).getPlayerRoom()))).getRoom());
         Intro.setId(R.id.intro_id);
         //btn.setId(R.id.testthing);
 

@@ -51,14 +51,16 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:text="Inventory" />
+                    android:text="Inventory"
+                    android:onClick="test"/>
 
                 <Button
                     android:id="@+id/combBTN"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:text="Combat" />
+                    android:text="Combat"
+                    android:onClick="onCombatButtonClicked"/>
             </TableRow>
 
         </TableLayout>
