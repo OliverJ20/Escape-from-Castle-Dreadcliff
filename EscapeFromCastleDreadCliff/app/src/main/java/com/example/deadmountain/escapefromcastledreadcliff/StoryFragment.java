@@ -25,16 +25,25 @@ import org.w3c.dom.Text;
  * A simple {@link Fragment} subclass.
  */
 public class StoryFragment extends Fragment {
+    private RoomCreation allRooms;
+    private Room theRoom;
 
 
     public StoryFragment() {
         // Required empty public constructor
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 40bca6f94762729210feb4442134be4647ccd03d
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        allRooms = new RoomCreation();
 
 
         View view = inflater.inflate(R.layout.fragment_barb_story, container, false);
@@ -43,8 +52,15 @@ public class StoryFragment extends Fragment {
 
 
         final TextView Header = (TextView) view.findViewById(R.id.barb_header);
+
+       // Header.setText(allRooms.getRoomFromID(((MainActivity) getActivity()).getPlayerRoom()).getRoom());
+        Header.setId(R.id.storyHeader);
+        Header.setText(((MainActivity) getActivity()).getPlayerRoomName());
+
+
         //Header.setText("testing for barb");
         Header.setText(((MainActivity)getActivity()).getPlayerRoomName(((MainActivity)getActivity()).getPlayerRoom()));
+
         Context mContext = getContext();
         //Button btn = new Button(mContext);
 
@@ -53,8 +69,12 @@ public class StoryFragment extends Fragment {
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         layoutParams.setMargins(30, 30,0, 0);
 
+
+
+
         //mRelativeLayout.addView(btn);
        // btn.setText("Test button");
+
         Log.i ("testing",((MainActivity) getActivity()).Intro());
 
        final TextView Intro = new TextView(mContext);
@@ -63,7 +83,11 @@ public class StoryFragment extends Fragment {
         //Intro.setText(((MainActivity) getActivity()).Intro());
         Intro.setText(((MainActivity)getActivity()).getRoom(((((MainActivity) getActivity()).getPlayerRoom()))).getRoom());
         Intro.setId(R.id.intro_id);
+
+
+
         //btn.setId(R.id.testthing);
+
 
 
 

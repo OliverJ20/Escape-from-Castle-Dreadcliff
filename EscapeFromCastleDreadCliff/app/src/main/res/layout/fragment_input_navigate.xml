@@ -26,32 +26,37 @@
                     android:id="@+id/topLEFTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="moveRoomButtonHandler"/>
 
                 <Button
                     android:id="@+id/topRIGHTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="moveRoomButtonHandler"/>
             </TableRow>
 
             <TableRow
                 android:id="@+id/navtableRow2"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" >
+                android:layout_weight="1"
+                >
 
                 <Button
                     android:id="@+id/bottomLEFTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="moveRoomButtonHandler"/>
 
                 <Button
                     android:id="@+id/bottomRIGHTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="moveRoomButtonHandler"/>
             </TableRow>
 
         </TableLayout>
