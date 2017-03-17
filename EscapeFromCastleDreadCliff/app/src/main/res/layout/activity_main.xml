@@ -32,9 +32,18 @@
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp"
-        android:id="@+id/button"
+        android:id="@+id/newGameButton"
         android:onClick="startGameHandler"/>
 
+    <Button
+        android:text="load game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:id="@+id/loadGameButton"
+        android:onClick="startGameHandler" />
 
 
 </RelativeLayout>
