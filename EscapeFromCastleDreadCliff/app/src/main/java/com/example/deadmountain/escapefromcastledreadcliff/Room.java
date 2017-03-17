@@ -45,6 +45,8 @@ public class Room {
     private String roomDirectionsTotal = "";
     private int[] connectedRooms = new int[4];
     private String[] roomDirections = new String[4];
+    private String[][] inspectChoices = new String[3][4];
+    private int maxButtons = 4;
 
 
     //constructor
@@ -92,5 +94,38 @@ public class Room {
     }
     public int getRoomID() {
         return roomID;
+    }
+    public void setClassInspect(String BarbarianInspect, String MageInspect, String RogueInspect) {
+        this.barbarianInspect = BarbarianInspect;
+        this.mageInspect = MageInspect;
+        this.rogueInspect = RogueInspect;
+    }
+    public String[] getinspectChoices(String playerClass) {
+        int barbarian = 0;
+        int mage = 1;
+        int rogue = 2;
+        String[] inspectChoices = new String[maxButtons];
+
+        if(playerClass == "Barbarian") {
+            for(int i = 0; i < maxButtons; i++) {
+                inspectChoices[i] = this.inspectChoices[barbarian][i];
+            }
+        }
+        else if(playerClass == "Mage") {
+            for(int i = 0; i < maxButtons; i++) {
+                inspectChoices[i] = this.inspectChoices[mage][i];
+            }
+        }
+        else if(playerClass == "Rogue"){
+            for(int i = 0; i < maxButtons; i++) {
+                inspectChoices[i] = this.inspectChoices[rogue][i];
+            }
+        }
+        else {
+            for(int i = 0; i < maxButtons; i++) {
+                inspectChoices[i] = "NULL";
+            }
+        }
+        return  inspectChoices;
     }
 }

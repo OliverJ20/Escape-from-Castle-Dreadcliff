@@ -49,20 +49,30 @@ public class StoryFragment extends Fragment {
 
 
         final TextView Header = (TextView) view.findViewById(R.id.barb_header);
+<<<<<<< HEAD
        // Header.setText(allRooms.getRoomFromID(((MainActivity) getActivity()).getPlayerRoom()).getRoom());
         Header.setId(R.id.storyHeader);
         Header.setText(((MainActivity) getActivity()).getPlayerRoomName());
 
+=======
+        //Header.setText("testing for barb");
+        Header.setText(((MainActivity)getActivity()).getPlayerRoomName(((MainActivity)getActivity()).getPlayerRoom()));
+>>>>>>> 999725573a7749817de46702750d74ee5cee3106
         Context mContext = getContext();
-        Button btn = new Button(mContext);
+        //Button btn = new Button(mContext);
 
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         layoutParams.setMargins(30, 30,0, 0);
 
+<<<<<<< HEAD
 
 
+=======
+        //mRelativeLayout.addView(btn);
+       // btn.setText("Test button");
+>>>>>>> 999725573a7749817de46702750d74ee5cee3106
         Log.i ("testing",((MainActivity) getActivity()).Intro());
 
        final TextView Intro = new TextView(mContext);
@@ -70,7 +80,11 @@ public class StoryFragment extends Fragment {
 
         Intro.setText(((MainActivity) getActivity()).Intro());
         Intro.setId(R.id.intro_id);
+<<<<<<< HEAD
 
+=======
+        //btn.setId(R.id.testthing);
+>>>>>>> 999725573a7749817de46702750d74ee5cee3106
 
 
 
@@ -83,14 +97,14 @@ public class StoryFragment extends Fragment {
 
        // Button button = (Button) getView().findViewById(R.id.inspBTN);
 
-        btn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view)
-            {
-               // Button b = (Button) view;
-                Intro.setText("test");
-
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View view)
+//            {
+//               // Button b = (Button) view;
+//                Intro.setText("test");
+//
+//            }
+//        });
 
 
 

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private StoryFragment StoryFragment;
     private InputFragment inputFragment;
     private InputNavFragment inputNavFragment;
+    private LoadScreenFragment loadScreenFragment;
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
@@ -65,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
         StoryFragment = new StoryFragment();
         inputFragment = new InputFragment();
         inputNavFragment = new InputNavFragment();
+        loadScreenFragment = new LoadScreenFragment();
         allRooms = new RoomCreation();
         allRooms.createAllRooms();
+
 
 
     }
@@ -98,10 +101,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void startGameHandler(View view) {
         view.setVisibility(View.GONE);
-
+        View loadbutton = findViewById(R.id.loadGameButton);
+        loadbutton.setVisibility(View.GONE);
         getSupportFragmentManager()
                 .beginTransaction()
-                .addToBackStack("test?")
+//                .addToBackStack("test?")
                 .replace(R.id.fragment_container, selectClassFragment)
                 .commit();
 
@@ -112,6 +116,28 @@ public class MainActivity extends AppCompatActivity {
         // ft.commit();
 
 
+    }
+
+
+    public void loadGameHandler(View view) {
+        view.setVisibility(View.GONE);
+        View newbutton = findViewById(R.id.newGameButton);
+        newbutton.setVisibility(View.GONE);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container,loadScreenFragment)
+                .commit();
+    }
+    public String getPlayerClass() {
+        return this.PlayerClass;
+    }
+
+    public Integer getPlayerRoom() {
+        return this.PlayerRoom;
+    }
+
+    public String getPlayerRoomName(int currentRoom) {
+        return allRooms.getRoomFromID(currentRoom).getRoom();
     }
 
     public void onMoveButtonClicked(View view) {
@@ -285,25 +311,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void moveRoomButtonHandler(View view)
-    {
-        if (allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0) == "S")
-        {
-            PlayerRoom = 1;
-            Log.i("testing",allRooms.getRoomFromID(PlayerRoom).getRoom() );
-            TextView Header = (TextView) StoryFragment.getActivity().findViewById(R.id.storyHeader);
-            Header.setText(allRooms.getRoomFromID(PlayerRoom).getRoom());
-
-        }
-    }
-    public int getPlayerRoom()
-    {
-        return PlayerRoom;
-    }
-    public String getPlayerRoomName()
-    {
-        return allRooms.getRoomFromID(PlayerRoom).getRoom();
-    }
+  
 
 
 
