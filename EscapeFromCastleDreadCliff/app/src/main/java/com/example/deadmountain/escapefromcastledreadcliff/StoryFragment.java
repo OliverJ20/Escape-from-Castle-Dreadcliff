@@ -31,12 +31,6 @@ public class StoryFragment extends Fragment {
 
     public StoryFragment() {
         // Required empty public constructor
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 40bca6f94762729210feb4442134be4647ccd03d
     }
 
 
