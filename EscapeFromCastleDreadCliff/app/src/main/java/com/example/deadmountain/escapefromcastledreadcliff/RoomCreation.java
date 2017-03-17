@@ -30,11 +30,11 @@ public class RoomCreation {
     public void createAllRooms() {
         allRooms = new ArrayList<Room>();
 
-        allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0,"", "S", "", "", ""));
-        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0,"", "S", "", "", ""));
-        /*allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,4,0));
-        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0,"","N","E","S", "W"));
-      /*  allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,4,0));
+        allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0, "S", "", "", ""));
+        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0, "S", "", "", ""));
+        allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,4,0,"S", "", "", ""));
+      /*  allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0,"","N","E","S", "W"));
+        allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,4,0));
         allRooms.add(3, new Room ("Storage Room", 3, "Storage Room", 1, 2,0,0,0));
         allRooms.add(4, new Room ("Guest bedroom", 4, "Guest Bedroom", 1, 5,0,0,0));
         allRooms.add(5, new Room ("stairs 1st floor", 5, "stairs 1st floor", 4, 4,9,6,2));

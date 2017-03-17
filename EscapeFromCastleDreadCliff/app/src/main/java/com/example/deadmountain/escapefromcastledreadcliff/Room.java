@@ -50,7 +50,7 @@ public class Room {
 
 
     //constructor
-    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String roomDirections, String Drt1, String Drt2, String Drt3, String Drt4) {
+    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String Drt1, String Drt2, String Drt3, String Drt4) {
         inspectTheRoom = inspect;
         roomID = id;
         roomName = name;
@@ -60,7 +60,6 @@ public class Room {
         this.connectedRooms[2] = room3;
         this.connectedRooms[3] = room4;
 
-        this.roomDirectionsTotal = roomDirections;
         this.roomDirections[0] = Drt1;
         this.roomDirections[1] = Drt2;
         this.roomDirections[2] = Drt3;
@@ -94,6 +93,9 @@ public class Room {
     }
     public int getRoomID() {
         return roomID;
+    }
+    public int getConnectedRoomID(int roomIndex) {
+        return this.connectedRooms[roomIndex];
     }
     public void setClassInspect(String BarbarianInspect, String MageInspect, String RogueInspect) {
         this.barbarianInspect = BarbarianInspect;

@@ -275,12 +275,12 @@ public class MainActivity extends AppCompatActivity {
 
     public String topRightbutton()
     {
-       return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0);
+       return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(1);
 
     }
     public String topLeftbutton()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(1);
+        return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0);
     }
     public String BottomLeftbutton()
     {
@@ -292,7 +292,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    public void onLeftButtonClickHandaler(View view) {
+        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
+        updateStoryFragment();
+    }
 
 
 
@@ -309,8 +312,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void moveRoomButtonHandler(View view)
     {
-
-
             if (allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0) == "S")
             {
                 PlayerRoom = 1;
