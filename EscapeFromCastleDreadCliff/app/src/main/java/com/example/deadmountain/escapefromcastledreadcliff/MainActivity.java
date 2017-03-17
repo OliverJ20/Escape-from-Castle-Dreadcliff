@@ -285,5 +285,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void moveRoomButtonHandler(View view)
+    {
+        if (allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0) == "S")
+        {
+            PlayerRoom = 1;
+            Log.i("testing",allRooms.getRoomFromID(PlayerRoom).getRoom() );
+            TextView Header = (TextView) StoryFragment.getActivity().findViewById(R.id.storyHeader);
+            Header.setText(allRooms.getRoomFromID(PlayerRoom).getRoom());
+
+        }
+    }
+    public int getPlayerRoom()
+    {
+        return PlayerRoom;
+    }
+    public String getPlayerRoomName()
+    {
+        return allRooms.getRoomFromID(PlayerRoom).getRoom();
+    }
+
+
 
 }

@@ -4,5 +4,6 @@
 
 
     <item name = "testthing" type = "id"/>
+    <item name = "storyHeader" type = "id"/>
 
 </resources>
