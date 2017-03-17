@@ -309,14 +309,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void moveRoomButtonHandler(View view)
     {
-        if (allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0) == "S")
-        {
-            PlayerRoom = 1;
-            Log.i("testing",allRooms.getRoomFromID(PlayerRoom).getRoom() );
-            TextView Header = (TextView) StoryFragment.getActivity().findViewById(R.id.storyHeader);
-            Header.setText(allRooms.getRoomFromID(PlayerRoom).getRoom());
 
-        }
+
+            if (allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0) == "S")
+            {
+                PlayerRoom = 1;
+                Log.i("testing",allRooms.getRoomFromID(PlayerRoom).getRoom() );
+                // TextView Header = (TextView) StoryFragment.getActivity().findViewById(R.id.storyHeader);
+                //Header.setText(allRooms.getRoomFromID(PlayerRoom).getRoom());
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .detach(StoryFragment)
+                        .commitNowAllowingStateLoss();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .attach(StoryFragment)
+                        .commitAllowingStateLoss();
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.button_container, inputFragment)
+                        .commit();
+
+            }
     }
 
     public String getPlayerRoomName()
