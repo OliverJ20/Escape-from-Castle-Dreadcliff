@@ -292,8 +292,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onLeftButtonClickHandaler(View view) {
+    public void topLeftButtonClickHandaler(View view) {
         this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
+        updateStoryFragment();
+    }
+    public void topRightButtonClickHandaler(View view) {
+        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
+        updateStoryFragment();
+    }
+    public void bottomLeftButtonClickHandaler(View view) {
+        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
+        updateStoryFragment();
+    }
+    public void bottomRightButtonClickHandaler(View view) {
+        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
         updateStoryFragment();
     }
 
@@ -339,6 +351,10 @@ public class MainActivity extends AppCompatActivity {
     {
         return allRooms.getRoomFromID(PlayerRoom).getRoom();
 
+    }
+    public String getRoomDescription()
+    {
+        return allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
     }
 
 

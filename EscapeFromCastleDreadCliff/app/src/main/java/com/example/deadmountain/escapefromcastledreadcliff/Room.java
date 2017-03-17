@@ -37,6 +37,7 @@ import java.util.ArrayList;
 public class Room {
     private String inspectTheRoom = "";
     private int roomID = 0;
+    private String roomDescript = "";
     private String roomName = "";
     private String barbarianInspect = ", your a barbarian";
     private String mageInspect = ", your a mage";
@@ -50,10 +51,11 @@ public class Room {
 
 
     //constructor
-    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String Drt1, String Drt2, String Drt3, String Drt4) {
+    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String Drt1, String Drt2, String Drt3, String Drt4, String roomDescription) {
         inspectTheRoom = inspect;
         roomID = id;
         roomName = name;
+        roomDescript = roomDescription;
         this.connectedRoomsTotal = connectedRooms;
         this.connectedRooms[0] = room1;
         this.connectedRooms[1] = room2;
@@ -70,6 +72,10 @@ public class Room {
 
     {
         return this.roomDirections[roomIndex];
+    }
+    public String getRoomDescription()
+    {
+        return roomDescript;
     }
 
     public String getRoom() {

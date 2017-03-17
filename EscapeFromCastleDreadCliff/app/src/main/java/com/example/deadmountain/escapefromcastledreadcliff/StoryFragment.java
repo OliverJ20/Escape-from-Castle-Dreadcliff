@@ -49,7 +49,7 @@ public class StoryFragment extends Fragment {
 
        // Header.setText(allRooms.getRoomFromID(((MainActivity) getActivity()).getPlayerRoom()).getRoom());
         Header.setId(R.id.storyHeader);
-        Header.setText(((MainActivity) getActivity()).getPlayerRoomName());
+        Header.setText("You are in the" +((MainActivity) getActivity()).getPlayerRoomName());
 
 
         //Header.setText("testing for barb");
@@ -75,7 +75,8 @@ public class StoryFragment extends Fragment {
         mmRelativeLayout.addView(Intro);
 
         //Intro.setText(((MainActivity) getActivity()).Intro());
-        Intro.setText(((MainActivity)getActivity()).getRoom(((((MainActivity) getActivity()).getPlayerRoom()))).getRoom());
+        //Intro.setText(((MainActivity)getActivity()).getRoom(((((MainActivity) getActivity()).getPlayerRoom()))).getRoom());
+        Intro.setText(((MainActivity)getActivity()).getRoomDescription());
         Intro.setId(R.id.intro_id);
 
 

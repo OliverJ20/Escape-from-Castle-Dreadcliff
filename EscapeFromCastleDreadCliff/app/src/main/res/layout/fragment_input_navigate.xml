@@ -27,14 +27,14 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:onClick="onLeftButtonClickHandaler"/>
+                    android:onClick="topLeftButtonClickHandaler"/>
 
                 <Button
                     android:id="@+id/topRIGHTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:onClick="moveRoomButtonHandler"/>
+                    android:onClick="topRightButtonClickHandaler"/>
             </TableRow>
 
             <TableRow
@@ -49,14 +49,14 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:onClick="moveRoomButtonHandler"/>
+                    android:onClick="bottomLeftButtonClickHandaler"/>
 
                 <Button
                     android:id="@+id/bottomRIGHTbtn"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:onClick="moveRoomButtonHandler"/>
+                    android:onClick="bottomRightButtonClickHandaler"/>
             </TableRow>
 
         </TableLayout>
