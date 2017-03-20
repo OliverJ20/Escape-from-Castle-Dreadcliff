@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private InputFragment inputFragment;
     private InputNavFragment inputNavFragment;
     private LoadScreenFragment loadScreenFragment;
+    private InspectOptionFragment inspectOptionFragment;
+    private InspectionFragment inspectionFragment;
+
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         inputFragment = new InputFragment();
         inputNavFragment = new InputNavFragment();
         loadScreenFragment = new LoadScreenFragment();
+        inspectOptionFragment = new InspectOptionFragment();
+        inspectionFragment =  new InspectionFragment();
         allRooms = new RoomCreation();
         allRooms.createAllRooms();
 
@@ -314,9 +319,41 @@ public class MainActivity extends AppCompatActivity {
    public void inspectButtonHandler(View view)
     {
         TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.intro_id);
-        Inspect.setText(InspectRoom());
+        Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
+
+        //TextView Inspect = (TextView) inspectionFragment.getActivity().findViewById(R.id.inspectInput);
+        //Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
 
 
+       /* getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack("navinput")
+                .replace(R.id.fragment_container, inspectionFragment)
+                .commit();
+
+
+
+
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inspectOptionFragment)
+                .commit();
+*/
+
+
+
+        /*getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inspectOptionFragment)
+                .commit();*/
+
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack("navinput")
+                .replace(R.id.button_container, inspectOptionFragment)
+                .commit();
 
 
 
@@ -355,6 +392,10 @@ public class MainActivity extends AppCompatActivity {
     public String getRoomDescription()
     {
         return allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+    }
+    public String getRoomInspection()
+    {
+        return allRooms.getRoomFromID(PlayerRoom).getRoomInspection();
     }
 
 
