@@ -87,19 +87,19 @@ public class RoomCreation {
 
         allRooms = new ArrayList<Room>();
 
-        allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0, "S", "", "", "",dungeonDescription));
-        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0, "E", "", "", "",tortureDescription));
-        allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,5,0,"W", "E", "S", "N",hallwayDescription));
-        allRooms.add(3, new Room ("Storage Room", 3, "Storage Room", 1, 2,0,0,0,"W", "", "", "",storageDescription));
-        allRooms.add(4, new Room ("Guest bedroom", 4, "Guest Bedroom", 1, 5,0,0,0,"E", "", "", "",guestDescription));
-        allRooms.add(5, new Room ("stairs 1st floor", 5, "stairs 1st floor", 4, 9,4,6,2,"S", "W", "E", "N",stairs1stfloorDescription));
-        allRooms.add(6, new Room ("pantry", 6, "pantry", 2, 5,10,0,0,"W", "S", "", "",pantryDescription));
-        allRooms.add(7, new Room ("Stairs leading upstairs", 7, "Stairs leading upstairs", 1, 9,0,0,0,"SE", "", "", "",stairsupwardsDescription));
-        allRooms.add(8, new Room ("Waiting room", 8, "Waiting room", 1, 11,0,0,0,"SE", "", "", "",waitingDescription));
-        allRooms.add(9, new Room ("Living room", 9, "Living room", 4, 11,12,7,5,"S", "SE", "NW", "N",livingDescription));
-        allRooms.add(10, new Room ("Kitchen", 10, "Kitchen", 2, 12,6,0,0,"S", "N", "", "",kitchenDescription));
-        allRooms.add(11, new Room ("Front door", 11, "Front door",3, 8,12,9,0,"NW", "SE", "N", "",frontdoorDescription));
-        allRooms.add(12, new Room ("Dinning room", 12, "Dinning room", 3, 9,11,10,0,"NW", "SW", "N", "",dinningDescription));
+        allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0, "South", "", "", "",dungeonDescription));
+        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0, "East", "", "", "",tortureDescription));
+        allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,5,0,"West", "East", "South", "North",hallwayDescription));
+        allRooms.add(3, new Room ("Storage Room", 3, "Storage Room", 1, 2,0,0,0,"West", "", "", "",storageDescription));
+        allRooms.add(4, new Room ("Guest bedroom", 4, "Guest Bedroom", 1, 5,0,0,0,"East", "", "", "",guestDescription));
+        allRooms.add(5, new Room ("stairs 1st floor", 5, "stairs 1st floor", 4, 9,4,6,2,"South", "West", "East", "North",stairs1stfloorDescription));
+        allRooms.add(6, new Room ("pantry", 6, "pantry", 2, 5,10,0,0,"West", "South", "", "",pantryDescription));
+        allRooms.add(7, new Room ("Stairs leading upstairs", 7, "Stairs leading upstairs", 1, 9,0,0,0,"South East", "", "", "",stairsupwardsDescription));
+        allRooms.add(8, new Room ("Waiting room", 8, "Waiting room", 1, 11,0,0,0,"South East", "", "", "",waitingDescription));
+        allRooms.add(9, new Room ("Living room", 9, "Living room", 4, 11,12,7,5,"South", "South East", "North West", "North",livingDescription));
+        allRooms.add(10, new Room ("Kitchen", 10, "Kitchen", 2, 12,6,0,0,"South", "North", "", "",kitchenDescription));
+        allRooms.add(11, new Room ("Front door", 11, "Front door",3, 8,12,9,0,"North West", "South East", "North", "",frontdoorDescription));
+        allRooms.add(12, new Room ("Dinning room", 12, "Dinning room", 3, 9,11,10,0,"North West", "South West", "North", "",dinningDescription));
 
 
 
