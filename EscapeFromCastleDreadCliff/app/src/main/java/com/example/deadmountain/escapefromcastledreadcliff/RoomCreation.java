@@ -96,9 +96,11 @@ public class RoomCreation {
                 "\ncovering all surfaces, with a large roasted pig in the middle";
 
 
+
         allRooms = new ArrayList<Room>();
 
-        allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0, "South", "", "", "",dungeonDescription, dungeonInspectDescription));
+        allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0, "South", "", "", "",dungeonDescription, dungeonInspectDescription ));
+
         allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0, "East", "", "", "",tortureDescription, tortuInspectDescription));
         allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,5,0,"West", "East", "South", "North",hallwayDescription,hallwayInspectDescription));
         allRooms.add(3, new Room ("Storage Room", 3, "Storage Room", 1, 2,0,0,0,"West", "", "", "",storageDescription,storageInspectDescription));

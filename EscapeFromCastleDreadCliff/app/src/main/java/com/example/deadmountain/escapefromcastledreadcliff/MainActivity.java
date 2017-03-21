@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
     private String inspectRoom = "";
     private RoomCreation allRooms;
 
+    private String[] PlayerConditions = new String[10];
+
+    private int Classid = 0;
+
 //    ArrayList<Room> allRooms = new ArrayList<Room>();
 //    Room gameRooms = new Room ("You are in a dark dungeon", 0, "Dungeon");
 //    boolean test = allRooms.add(gameRooms);
@@ -218,6 +222,8 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
             PlayerClass = "Barbarian";
             PlayerRoom = 0;
+            Classid = 0;
+
         }
         else if (selectedOption == 2) {
             getSupportFragmentManager()
@@ -226,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
             PlayerClass = "Mage";
             PlayerRoom = 0;
+            Classid = 1;
         }
         else if (selectedOption == 3) {
             getSupportFragmentManager()
@@ -234,12 +241,14 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
             PlayerClass = "Rogue";
             PlayerRoom = 0;
+            Classid = 2;
         }
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.button_container, inputFragment)
                 .commit();
         //Intent intent = new Intent (SelectClassFragment.this, MainActivity);
+
     }
 
 
@@ -303,6 +312,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void topRightButtonClickHandaler(View view) {
         this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
+
         updateStoryFragment();
     }
     public void bottomLeftButtonClickHandaler(View view) {
@@ -314,39 +324,38 @@ public class MainActivity extends AppCompatActivity {
         updateStoryFragment();
     }
 
+    public String roomAndInspectText()
+    {
+      //  TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.intro_id);
+     //   Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
+        return  allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection();
+    }
+
 
 
    public void inspectButtonHandler(View view)
     {
         TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.intro_id);
-        Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
-
-        //TextView Inspect = (TextView) inspectionFragment.getActivity().findViewById(R.id.inspectInput);
-        //Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
-
-
-       /* getSupportFragmentManager()
-                .beginTransaction()
-                .addToBackStack("navinput")
-                .replace(R.id.fragment_container, inspectionFragment)
-                .commit();
+       // Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
+        //Inspect.setText(roomAndInspectText()+ "\n"+"Option 1 is to kill a dude\nOption 2 do a thing\nOption 3 have fun");
 
 
 
+        Inspect.setText(roomAndInspectText()+ "\n"
+                + allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
+                +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[1][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
+                +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[2][allRooms.getRoomFromID(PlayerRoom).getRoomID()]);
+
+               // allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
 
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inspectOptionFragment)
-                .commit();
-*/
+        if (allRooms.getRoomFromID(PlayerRoom).getRoom() == "Storage Room")
+        {
+            if (PlayerConditions[0] != "Torch") {
+                Inspect.setText( "the room is to dark to see");
+            }
 
-
-
-        /*getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inspectOptionFragment)
-                .commit();*/
+        }
 
 
         getSupportFragmentManager()
@@ -358,6 +367,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public String option1ButtonCheck()
+    {
+        return allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()];
+    }
+    public String option2ButtonCheck()
+    {
+        return allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[1][allRooms.getRoomFromID(PlayerRoom).getRoomID()];
+    }
+
+    public String option3ButtonCheck()
+    {
+        return allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[2][allRooms.getRoomFromID(PlayerRoom).getRoomID()];
+    }
+
 
     public void moveRoomButtonHandler(View view)
     {
@@ -391,12 +414,56 @@ public class MainActivity extends AppCompatActivity {
     }
     public String getRoomDescription()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+        String roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+        if (allRooms.getRoomFromID(PlayerRoom).getRoom() == "Storage Room")
+        {
+            if (PlayerConditions[0] != "Torch") {
+                roomDescript = "the room is to dark to see";
+            }
+
+        }
+        return roomDescript;
+
     }
     public String getRoomInspection()
     {
         return allRooms.getRoomFromID(PlayerRoom).getRoomInspection();
     }
+    public String[] inspectOptions()
+    {
+        if (allRooms.getRoomFromID(PlayerRoom).getRoomID() == 0 )
+        {
+            String option1 = "hit thing";
+            String option2 = "break thing";
+            String option3 = "end thing";
+            String[] options = {option1, option2, option3};
+            return options;
+        }
+        return null;
+
+    }
+
+    public void option1ButtonHandler(View view)
+    {
+        this.PlayerConditions[0] = "Torch";
+        getSupportFragmentManager()
+                .beginTransaction()
+                .detach(StoryFragment)
+                .commitNowAllowingStateLoss();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .attach(StoryFragment)
+                .commitAllowingStateLoss();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputFragment)
+                .commit();
+
+
+    }
+
+
 
 
 

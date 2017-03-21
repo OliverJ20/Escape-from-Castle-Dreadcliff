@@ -28,7 +28,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Option 1"
-                    android:onClick=""/>
+                    android:onClick="option1ButtonHandler"/>
 
                 <Button
                     android:id="@+id/Option2"
@@ -54,13 +54,7 @@
                     android:text="Option 3"
                     android:onClick=""/>
 
-                <Button
-                    android:id="@+id/Option4"
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:text="Option 4"
-                    android:onClick=""/>
+
             </TableRow>
 
         </TableLayout>

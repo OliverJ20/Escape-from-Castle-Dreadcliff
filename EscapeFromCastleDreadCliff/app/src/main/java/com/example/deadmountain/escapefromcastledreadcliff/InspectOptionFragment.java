@@ -36,7 +36,46 @@ public class InspectOptionFragment extends Fragment {
 
 
 
+
+
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+        Button option1btn  = (Button) view.findViewById(R.id.Option1);
+
+        Button option2btn  = (Button) view.findViewById(R.id.Option2);
+
+        Button option3btn  = (Button) view.findViewById(R.id.Option3);
+
+        if ( ((MainActivity)getActivity()).option1ButtonCheck() == "")
+        {
+            option1btn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            option1btn.setVisibility(View.VISIBLE);
+        }
+
+        if ( ((MainActivity)getActivity()).option2ButtonCheck() == "")
+        {
+            option2btn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            option1btn.setVisibility(View.VISIBLE);
+        }
+
+        if ( ((MainActivity)getActivity()).option3ButtonCheck() == "")
+        {
+            option3btn.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            option1btn.setVisibility(View.VISIBLE);
+        }
+
+
+
+
         return view;
         // Inflate the layout for this fragment
     }
