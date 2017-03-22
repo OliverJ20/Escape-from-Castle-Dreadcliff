@@ -1,7 +1,14 @@
 package com.example.deadmountain.escapefromcastledreadcliff;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -127,14 +134,62 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void saveGame() {
+        String toSave = getPlayerClass() + ", " + getPlayerRoom();
+        String fileName = "saveFile";
+        try {
+            FileOutputStream fOut = openFileOutput(fileName, MODE_PRIVATE);
+            fOut.write(toSave.getBytes());
+            fOut.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    String loadedContent = "";
+    public void loadGame() {
+        String fileName = "saveFile";
+        try {
+            FileInputStream fIn = openFileInput(fileName);
+            InputStreamReader isr = new InputStreamReader(fIn);
+            BufferedReader bR = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = bR.readLine()) != null) {
+                loadedContent = line;
+                sb.append(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public void loadGameHandler(View view) {
+        // Remove the new game and load game buttons
         view.setVisibility(View.GONE);
         View newbutton = findViewById(R.id.newGameButton);
         newbutton.setVisibility(View.GONE);
+
+        // Read the file
+
+        // Process the file
+
+        // Set veriables
+        this.PlayerRoom = 2;
+        this.PlayerClass = "Mage";
+
+        // Load the story fragment and input fragment
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container,loadScreenFragment)
+                .replace(R.id.fragment_container, StoryFragment)
+                .commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputFragment)
                 .commit();
     }
     public String getPlayerClass() {
@@ -180,7 +235,11 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
     public void onCombatButtonClicked(View view) {
-        updateStoryFragment();
+        saveGame();
+    }
+
+    public void onInventoryButtonClicked(View view) {
+
     }
     public void onRadioButtonClicked(View view)
     {
