@@ -54,6 +54,7 @@ public class Room {
     private String[] Option1 = new String[11];
     private String[] Option2 = new String[11];
     private String[] Option3 = new String[11];
+    private String option1Test = "";
 
 
 
@@ -93,6 +94,10 @@ public class Room {
 
     public String getRoom() {
         return  roomName;
+    }
+
+    public void AddOption1Test (String Option1) {
+        this.option1Test = Option1;
     }
 
     public String [][] getRoomOptions(String playerClass)
