@@ -96,8 +96,14 @@ public class Room {
         return  roomName;
     }
 
-    public void AddOption1Test (String Option1) {
-        this.option1Test = Option1;
+    public void AddOptions (String [][] option) {
+        this.Options = option;
+    }
+    public String [][] getOptions (String playerClass)
+    {
+           return Options;
+
+
     }
 
     public String GetOption1Test () {

@@ -341,11 +341,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Inspect.setText(roomAndInspectText()+ "\n"
+        /*Inspect.setText(roomAndInspectText()+ "\n"
                 + allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
                 +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[1][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
-                +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[2][allRooms.getRoomFromID(PlayerRoom).getRoomID()]);
+                +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[2][allRooms.getRoomFromID(PlayerRoom).getRoomID()]);*/
 
+
+        Inspect.setText(roomAndInspectText() + "\n"
+        + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][0]
+        + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][1]
+        + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][2]);
                // allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
 
 
@@ -369,16 +374,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public String option1ButtonCheck()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()];
+        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][0];
     }
     public String option2ButtonCheck()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[1][allRooms.getRoomFromID(PlayerRoom).getRoomID()];
+        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][1];
     }
 
     public String option3ButtonCheck()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[2][allRooms.getRoomFromID(PlayerRoom).getRoomID()];
+        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][2];
     }
 
 
