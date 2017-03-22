@@ -101,6 +101,9 @@ public class Room {
     }
     public String [][] getOptions (String playerClass)
     {
+
+        Log.i ("help test", Options[0][0]);
+        Log.i ("helppppp test", Options[0][1]);
            return Options;
 
 

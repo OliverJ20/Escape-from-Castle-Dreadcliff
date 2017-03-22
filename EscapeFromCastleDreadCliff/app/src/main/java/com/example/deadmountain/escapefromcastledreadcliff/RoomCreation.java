@@ -130,6 +130,8 @@ public class RoomCreation {
 
         allRooms.get(0).AddOptions(RoomOptions);
 
+        Log.i ("testing a thing", RoomOptions[0][0]);
+
         RoomOptions[0][0] = "BarbarianOption1TORT";
         RoomOptions[0][1] = "BarbarianOption2TORT";
         RoomOptions[0][2] = "BarbarianOption3TORT";
@@ -142,6 +144,7 @@ public class RoomCreation {
         // Pass RoomOptions to room0
 
         allRooms.get(1).AddOptions(RoomOptions);
+        Log.i ("testing a thing", RoomOptions[0][0]);
 
 
 
