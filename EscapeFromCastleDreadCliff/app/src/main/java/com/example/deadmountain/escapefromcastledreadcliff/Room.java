@@ -48,7 +48,7 @@ public class Room {
     private String roomDirectionsTotal = "";
     private int[] connectedRooms = new int[4];
     private String[] roomDirections = new String[4];
-    private String[][] inspectChoices = new String[3][4];
+    private String[][] inspectChoices = new String[3][3];
     private int maxButtons = 4;
     private String[][] Options = new String[3][3];
     private String[] Option1 = new String[11];

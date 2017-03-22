@@ -26,7 +26,7 @@ import android.util.Log;
 import org.w3c.dom.Text;
 public class RoomCreation {
     private ArrayList<Room> allRooms;
-
+    private String[][] RoomOptions = new String[3][3];
     public void createAllRooms() {
 
         String dungeonDescription ="You awake to the sound of thunder echoing from outside" +
@@ -114,7 +114,23 @@ public class RoomCreation {
         allRooms.add(12, new Room ("Dinning room", 12, "Dinning room", 3, 9,11,10,0,"North West", "South West", "North", "",dinningDescription,""));
 
 
+        RoomOptions[0][0] = "BarbarianOption1";
+        RoomOptions[0][1] = "BarbarianOption2";
+        RoomOptions[0][2] = "BarbarianOption3";
+        RoomOptions[1][0] = "MageOption1";
+        RoomOptions[2][1] = "MageOption2";
+        RoomOptions[1][2] = "MageOption3";
+        RoomOptions[3][0] = "RougeOption1";
+        RoomOptions[3][1] = "RougeOption2";
+        RoomOptions[3][2] = "RougeOption3";
+
+
+        // Pass RoomOptions to room0
+
+        
+
         allRooms.get(0).AddOption1Test("THIS IS A TEST OPTION");
+        allRooms.get(1).AddOption1Test("THIS IS A TEST OPTION");
         // basic skeleton of how each room will be made
 
 
