@@ -43,7 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:id="@+id/loadGameButton"
-        android:onClick="startGameHandler" />
+        android:onClick="loadGameHandler" />
 
 
 </RelativeLayout>
