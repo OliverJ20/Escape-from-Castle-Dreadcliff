@@ -100,6 +100,10 @@ public class Room {
         this.option1Test = Option1;
     }
 
+    public String GetOption1Test () {
+        return option1Test;
+    }
+
     public String [][] getRoomOptions(String playerClass)
     {
         if (playerClass == "Barbarian")
