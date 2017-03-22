@@ -115,7 +115,7 @@ public class RoomCreation {
         allRooms.add(12, new Room ("Dinning room", 12, "Dinning room", 3, 9,11,10,0,"North West", "South West", "North", "",dinningDescription,""));
 
 
-<<<<<<< HEAD
+
         RoomOptions[0][0] = "BarbarianOption1";
         RoomOptions[0][1] = "BarbarianOption2";
         RoomOptions[0][2] = "BarbarianOption3";
@@ -127,8 +127,6 @@ public class RoomCreation {
         RoomOptions[2][2] = "RougeOption3";
 
 
-=======
->>>>>>> 83b8cb8a16c8055d3000ea8b4c5e948a46540896
 
         allRooms.get(0).AddOptions(RoomOptions);
 
@@ -143,10 +141,9 @@ public class RoomCreation {
         RoomOptions[2][2] = "RougeOption3TORT";
         // Pass RoomOptions to room0
 
-<<<<<<< HEAD
         allRooms.get(1).AddOptions(RoomOptions);
-=======
->>>>>>> 83b8cb8a16c8055d3000ea8b4c5e948a46540896
+
+
 
         // basic skeleton of how each room will be made
         RoomOptions[0][0] = "BarbarianOption1HALLWAY";
