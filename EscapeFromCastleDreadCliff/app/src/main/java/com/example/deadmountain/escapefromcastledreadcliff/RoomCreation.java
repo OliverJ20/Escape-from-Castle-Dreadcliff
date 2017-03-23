@@ -26,7 +26,7 @@ import android.util.Log;
 import org.w3c.dom.Text;
 public class RoomCreation {
     private ArrayList<Room> allRooms;
-    private String[][] RoomOptions = new String[3][3];
+    private String[][][] RoomOptions = new String[11][3][3];
 
     public void createAllRooms() {
 
@@ -116,53 +116,56 @@ public class RoomCreation {
 
 
 
-        RoomOptions[0][0] = "BarbarianOption1";
-        RoomOptions[0][1] = "BarbarianOption2";
-        RoomOptions[0][2] = "BarbarianOption3";
-        RoomOptions[1][0] = "MageOption1";
-        RoomOptions[1][1] = "MageOption2";
-        RoomOptions[1][2] = "MageOption3";
-        RoomOptions[2][0] = "RougeOption1";
-        RoomOptions[2][1] = "RougeOption2";
-        RoomOptions[2][2] = "RougeOption3";
+        RoomOptions[0][0][0] = "BarbarianOption1";
+        RoomOptions[0][0][1] = "BarbarianOption2";
+        RoomOptions[0][0][2] = "BarbarianOption3";
+        RoomOptions[0][1][0] = "MageOption1";
+        RoomOptions[0][1][1] = "MageOption2";
+        RoomOptions[0][1][2] = "MageOption3";
+        RoomOptions[0][2][0] = "RougeOption1";
+        RoomOptions[0][2][1] = "RougeOption2";
+        RoomOptions[0][2][2] = "RougeOption3";
+
 
 
 
         allRooms.get(0).AddOptions(RoomOptions);
 
-        Log.i ("testing a thing", RoomOptions[0][0]);
 
-        RoomOptions[0][0] = "BarbarianOption1TORT";
-        RoomOptions[0][1] = "BarbarianOption2TORT";
-        RoomOptions[0][2] = "BarbarianOption3TORT";
-        RoomOptions[1][0] = "MageOption1TORT";
-        RoomOptions[1][1] = "MageOption2TORT";
-        RoomOptions[1][2] = "MageOption3TORT";
-        RoomOptions[2][0] = "RougeOption1TORT";
-        RoomOptions[2][1] = "RougeOption2TORT";
-        RoomOptions[2][2] = "RougeOption3TORT";
+
+      //  Log.i ("testing a thing", RoomOptions[0][0]);
+
+        RoomOptions[1][0][0] = "BarbarianOption1TORT";
+        RoomOptions[1][0][1] = "BarbarianOption2TORT";
+        RoomOptions[1][0][2] = "BarbarianOption3TORT";
+        RoomOptions[1][1][0] = "MageOption1TORT";
+        RoomOptions[1][1][1] = "MageOption2TORT";
+        RoomOptions[1][1][2] = "MageOption3TORT";
+        RoomOptions[1][2][0] = "RougeOption1TORT";
+        RoomOptions[1][2][1] = "RougeOption2TORT";
+        RoomOptions[1][2][2] = "RougeOption3TORT";
         // Pass RoomOptions to room0
 
         allRooms.get(1).AddOptions(RoomOptions);
-        Log.i ("testing a thing", RoomOptions[0][0]);
+      //  Log.i ("testing a thing", RoomOptions[0][0]);
 
 
 
         // basic skeleton of how each room will be made
-        RoomOptions[0][0] = "BarbarianOption1HALLWAY";
-        RoomOptions[0][1] = "BarbarianOption2HALLWAY";
-        RoomOptions[0][2] = "BarbarianOption3HALLWAY";
-        RoomOptions[1][0] = "MageOption1HALLWAY";
-        RoomOptions[1][1] = "MageOption2HALLWAY";
-        RoomOptions[1][2] = "MageOption3HALLWAY";
-        RoomOptions[2][0] = "RougeOption1HALLWAY";
-        RoomOptions[2][1] = "RougeOption2HALLWAY";
-        RoomOptions[2][2] = "RougeOption3HALLWAY";
+        RoomOptions[2][0][0] = "BarbarianOption1HALLWAY";
+        RoomOptions[2][0][1] = "BarbarianOption2HALLWAY";
+        RoomOptions[2][0][2] = "BarbarianOption3HALLWAY";
+        RoomOptions[2][1][0] = "MageOption1HALLWAY";
+        RoomOptions[2][1][1] = "MageOption2HALLWAY";
+        RoomOptions[2][1][2] = "MageOption3HALLWAY";
+        RoomOptions[2][2][0] = "RougeOption1HALLWAY";
+        RoomOptions[2][2][1] = "RougeOption2HALLWAY";
+        RoomOptions[2][2][2] = "RougeOption3HALLWAY";
 
 
         allRooms.get(2).AddOptions(RoomOptions);
 
-        RoomOptions[0][0] = "BarbarianOption1STORAGE";
+        /*RoomOptions[0][0] = "BarbarianOption1STORAGE";
         RoomOptions[0][1] = "BarbarianOption2STORAGE";
         RoomOptions[0][2] = "BarbarianOption3STORAGE";
         RoomOptions[1][0] = "MageOption1TORTSTORAGE";
@@ -174,7 +177,7 @@ public class RoomCreation {
         // Pass RoomOptions to room0
 
         allRooms.get(3).AddOptions(RoomOptions);
-        // basic skeleton of how each room will be made
+        // basic skeleton of how each room will be made*/
 
 
 

@@ -407,9 +407,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         Inspect.setText(roomAndInspectText() + "\n"
-        + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][0]
-        + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][1]
-        + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][2]);
+        + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[allRooms.getRoomFromID(PlayerRoom).getRoomID()][Classid][0]
+        + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[allRooms.getRoomFromID(PlayerRoom).getRoomID()][Classid][1]
+        + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[allRooms.getRoomFromID(PlayerRoom).getRoomID()][Classid][2]);
                // allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
 
 
@@ -433,16 +433,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public String option1ButtonCheck()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][0];
+        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[allRooms.getRoomFromID(PlayerRoom).getRoomID()][Classid][0];
     }
     public String option2ButtonCheck()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][1];
+        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[allRooms.getRoomFromID(PlayerRoom).getRoomID()][Classid][1];
     }
 
     public String option3ButtonCheck()
     {
-        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][2];
+        return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[allRooms.getRoomFromID(PlayerRoom).getRoomID()][Classid][2];
     }
 
 

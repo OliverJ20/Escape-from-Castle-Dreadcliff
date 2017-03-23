@@ -50,7 +50,7 @@ public class Room {
     private String[] roomDirections = new String[4];
     private String[][] inspectChoices = new String[3][3];
     private int maxButtons = 4;
-    private String[][] Options = new String[3][3];
+    private String[][][] Options = new String[11][3][3];
     private String[] Option1 = new String[11];
     private String[] Option2 = new String[11];
     private String[] Option3 = new String[11];
@@ -96,14 +96,14 @@ public class Room {
         return  roomName;
     }
 
-    public void AddOptions (String [][] option) {
+    public void AddOptions (String [][][] option) {
         this.Options = option;
     }
-    public String [][] getOptions (String playerClass)
+    public String [][][] getOptions (String playerClass)
     {
 
-        Log.i ("help test", Options[0][0]);
-        Log.i ("helppppp test", Options[0][1]);
+        //Log.i ("help test", Options[0][0]);
+        //Log.i ("helppppp test", Options[0][1]);
            return Options;
 
 
@@ -160,10 +160,10 @@ public class Room {
                 this.Options[2] = "dance";
                 return this.Options;
             }*/
-            this.Options[0] = this.Option1;
+           /* this.Options[0] = this.Option1;
             this.Options[1] = this.Option2;
             this.Options[2] = this.Option3;
-            return this.Options;
+            return this.Options;*/
         }
         /*if (playerClass == "Mage")
         {
