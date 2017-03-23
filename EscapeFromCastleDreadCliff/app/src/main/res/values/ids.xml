@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item  name = "intro_id" type = "id"/>
+
+
+    <item name = "testthing" type = "id"/>
+    <item name = "storyHeader" type = "id"/>
+    <item name = "inspectInput" type = "id"/>
+
+</resources>

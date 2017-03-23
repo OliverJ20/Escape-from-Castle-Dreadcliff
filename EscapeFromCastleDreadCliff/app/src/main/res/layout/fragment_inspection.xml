@@ -11,7 +11,7 @@
     android:paddingTop="0dp">
 
     <TextView
-        android:id="@+id/barb_header"
+        android:id="@+id/inspect_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
@@ -22,21 +22,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/barb_header"
+        android:layout_below="@id/inspect_header"
 
-        android:id="@+id/barb_button_container"
+        android:id="@+id/inspect_button_container"
         android:layout_alignParentStart="true"></RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/barb_text_container"
+        android:id="@+id/inspect_text_container"
         android:text =""
-        android:layout_below="@+id/barb_button_container"
+        android:layout_below="@+id/inspect_button_container"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="56dp"></RelativeLayout>
 
 
 </RelativeLayout>
-
