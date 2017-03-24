@@ -137,6 +137,18 @@ public class MainActivity extends AppCompatActivity {
     public void saveGame() {
         String toSave = getPlayerClass() + ", " + getPlayerRoom();
         String fileName = "saveFile";
+//        if (getPlayerClass() == "Barbarian"){
+//            fileName = "barbarianSave";
+//        }
+//        else if(getPlayerClass() == "Mage") {
+//            fileName = "mageSave";
+//        }
+//        else if(getPlayerClass() == "Rogue") {
+//            fileName = "rogueSave";
+//        }
+//        else {
+//            fileName = "unknownSave";
+//        }
         try {
             FileOutputStream fOut = openFileOutput(fileName, MODE_PRIVATE);
             fOut.write(toSave.getBytes());
@@ -148,8 +160,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     String loadedContent = "";
-    public String loadGame() {
+    public String loadGameFile() {
         String fileName = "saveFile";
+//        if (loadClass == "Barbarian"){
+//            fileName = "barbarianSave";
+//        }
+//        else if(loadClass == "Mage") {
+//            fileName = "mageSave";
+//        }
+//        else if(loadClass == "Rogue") {
+//            fileName = "rogueSave";
+//        }
+//        else {
+//            fileName = "unknownSave";
+//        }
         try {
             FileInputStream fIn = openFileInput(fileName);
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -181,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
         newbutton.setVisibility(View.GONE);
 
         // Read the file
-        loadedFile = loadGame();
+        loadedFile = loadGameFile();
         // Process the file
         loadedTokens = loadedFile.split(", +");
         loadedPlayerClass = loadedTokens[0];
