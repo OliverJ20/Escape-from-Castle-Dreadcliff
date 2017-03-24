@@ -52,7 +52,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Inventory"
-                    android:onClick="test"/>
+                    android:onClick="onInventoryButtonClicked"/>
 
                 <Button
                     android:id="@+id/combBTN"

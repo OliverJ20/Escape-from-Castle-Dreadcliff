@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     String loadedContent = "";
-    public void loadGame() {
+    public String loadGame() {
         String fileName = "saveFile";
         try {
             FileInputStream fIn = openFileInput(fileName);
@@ -165,22 +165,30 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return  loadedContent;
 
     }
 
     public void loadGameHandler(View view) {
+        Integer loadedPlayerRoom = 0;
+        String loadedPlayerClass = "";
+        String loadedFile = "";
+        String[] loadedTokens;
+
         // Remove the new game and load game buttons
         view.setVisibility(View.GONE);
         View newbutton = findViewById(R.id.newGameButton);
         newbutton.setVisibility(View.GONE);
 
         // Read the file
-
+        loadedFile = loadGame();
         // Process the file
-
+        loadedTokens = loadedFile.split(", +");
+        loadedPlayerClass = loadedTokens[0];
+        loadedPlayerRoom = Integer.parseInt(loadedTokens[1]);
         // Set veriables
-        this.PlayerRoom = 2;
-        this.PlayerClass = "Mage";
+        this.PlayerRoom = loadedPlayerRoom;
+        this.PlayerClass = loadedPlayerClass;
 
         // Load the story fragment and input fragment
         getSupportFragmentManager()
@@ -233,9 +241,10 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.button_container, inputFragment)
                 .commit();
-    }
-    public void onCombatButtonClicked(View view) {
         saveGame();
+    }
+
+    public void onCombatButtonClicked(View view) {
     }
 
     public void onInventoryButtonClicked(View view) {
