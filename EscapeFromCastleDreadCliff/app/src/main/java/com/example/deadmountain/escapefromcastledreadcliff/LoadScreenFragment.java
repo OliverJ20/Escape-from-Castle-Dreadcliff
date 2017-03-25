@@ -20,5 +20,4 @@ public class LoadScreenFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_load_screen, container, false);
     }
-
 }

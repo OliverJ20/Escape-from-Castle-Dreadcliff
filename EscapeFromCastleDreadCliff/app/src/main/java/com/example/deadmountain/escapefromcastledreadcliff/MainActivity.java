@@ -93,28 +93,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inputFragment )
-                .commit();
+        if (getFragmentManager().getBackStackEntryCount() != 0) {
+            getFragmentManager().popBackStack();
+        }
+        else {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.button_container, inputFragment )
+                    .commit();
+        }
     }
 
     public void startGameHandler(View view) {
-        view.setVisibility(View.GONE);
+        view.setVisibility(View.INVISIBLE);
         View loadbutton = findViewById(R.id.loadGameButton);
-        loadbutton.setVisibility(View.GONE);
+        loadbutton.setVisibility(View.INVISIBLE);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, selectClassFragment)
                 .commit();
-
-        // FragmentManager fm = getSupportFragmentManager();
-        //SelectClassFragment selectFragment = new SelectClassFragment();
-        // FragmentTransaction ft = fm.beginTransaction();
-        // ft.replace(R.id.fragment_container, selectFragment);
-        // ft.commit();
-
-
     }
     public void loadScreenHandler(View view) {
         view.setVisibility(View.GONE);
