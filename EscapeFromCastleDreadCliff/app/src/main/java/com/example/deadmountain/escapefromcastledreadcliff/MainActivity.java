@@ -32,6 +32,7 @@ import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 
 import android.content.Intent;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -92,28 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        if (getFragmentManager().getBackStackEntryCount() > 0) {
-//            getFragmentManager().popBackStack();
-//        } else {
-//            super.onBackPressed();
-//        }
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.button_container, inputFragment )
                 .commit();
     }
-
-    // public void newGame()
-    // {
-    //     final Button button = (Button) findViewById(R.id.newGamebutton);
-
-    // }
-
-///CREATE OBJECTS !.
-
-
-
 
     public void startGameHandler(View view) {
         view.setVisibility(View.GONE);
@@ -121,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         loadbutton.setVisibility(View.GONE);
         getSupportFragmentManager()
                 .beginTransaction()
-//                .addToBackStack("test?")
                 .replace(R.id.fragment_container, selectClassFragment)
                 .commit();
 
@@ -133,22 +116,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void loadScreenHandler(View view) {
+        view.setVisibility(View.GONE);
+        View newbutton = findViewById(R.id.newGameButton);
+        newbutton.setVisibility(View.GONE);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, loadScreenFragment)
+                .commit();
+
+    }
 
     public void saveGame() {
         String toSave = getPlayerClass() + ", " + getPlayerRoom();
-        String fileName = "saveFile";
-//        if (getPlayerClass() == "Barbarian"){
-//            fileName = "barbarianSave";
-//        }
-//        else if(getPlayerClass() == "Mage") {
-//            fileName = "mageSave";
-//        }
-//        else if(getPlayerClass() == "Rogue") {
-//            fileName = "rogueSave";
-//        }
-//        else {
-//            fileName = "unknownSave";
-//        }
+        String fileName = "";
+        if (getPlayerClass() == "Barbarian"){
+            fileName = "barbarianSave";
+        }
+        else if(getPlayerClass() == "Mage") {
+            fileName = "mageSave";
+        }
+        else if(getPlayerClass() == "Rogue") {
+            fileName = "rogueSave";
+        }
+        else {
+            fileName = "unknownSave";
+        }
         try {
             FileOutputStream fOut = openFileOutput(fileName, MODE_PRIVATE);
             fOut.write(toSave.getBytes());
@@ -160,20 +153,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     String loadedContent = "";
-    public String loadGameFile() {
+
+    public String loadGameFile(String loadClass) {
         String fileName = "saveFile";
-//        if (loadClass == "Barbarian"){
-//            fileName = "barbarianSave";
-//        }
-//        else if(loadClass == "Mage") {
-//            fileName = "mageSave";
-//        }
-//        else if(loadClass == "Rogue") {
-//            fileName = "rogueSave";
-//        }
-//        else {
-//            fileName = "unknownSave";
-//        }
+        if (loadClass == "Barbarian"){
+            fileName = "barbarianSave";
+        }
+        else if(loadClass == "Mage") {
+            fileName = "mageSave";
+        }
+        else if(loadClass == "Rogue") {
+            fileName = "rogueSave";
+        }
+        else {
+            fileName = "unknownSave";
+        }
         try {
             FileInputStream fIn = openFileInput(fileName);
             InputStreamReader isr = new InputStreamReader(fIn);
@@ -185,44 +179,53 @@ public class MainActivity extends AppCompatActivity {
                 sb.append(line);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            return "error_no_save";
         } catch (IOException e) {
             e.printStackTrace();
         }
         return  loadedContent;
 
     }
-
-    public void loadGameHandler(View view) {
+    public void loadBarbarian(View view) {
+        loadGameHandler(view,"Barbarian");
+    }
+    public void loadMage(View view) {
+        loadGameHandler(view, "Mage");
+    }
+    public void loadRogue(View view) {
+        loadGameHandler(view, "Rogue");
+    }
+    public void loadGameHandler(View view, String saveFile) {
         Integer loadedPlayerRoom = 0;
         String loadedPlayerClass = "";
         String loadedFile = "";
         String[] loadedTokens;
 
-        // Remove the new game and load game buttons
-        view.setVisibility(View.GONE);
-        View newbutton = findViewById(R.id.newGameButton);
-        newbutton.setVisibility(View.GONE);
-
         // Read the file
-        loadedFile = loadGameFile();
+        loadedFile = loadGameFile(saveFile);
         // Process the file
-        loadedTokens = loadedFile.split(", +");
-        loadedPlayerClass = loadedTokens[0];
-        loadedPlayerRoom = Integer.parseInt(loadedTokens[1]);
-        // Set veriables
-        this.PlayerRoom = loadedPlayerRoom;
-        this.PlayerClass = loadedPlayerClass;
+        if (loadedFile != "error_no_save") {
+            loadedTokens = loadedFile.split(", +");
+            loadedPlayerClass = loadedTokens[0];
+            loadedPlayerRoom = Integer.parseInt(loadedTokens[1]);
+            // Set veriables
+            this.PlayerRoom = loadedPlayerRoom;
+            this.PlayerClass = loadedPlayerClass;
 
-        // Load the story fragment and input fragment
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, StoryFragment)
-                .commit();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inputFragment)
-                .commit();
+            // Load the story fragment and input fragment
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, StoryFragment)
+                    .commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.button_container, inputFragment)
+                    .commit();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "The save file is empty",Toast.LENGTH_SHORT).show();
+        }
+
     }
     public String getPlayerClass() {
         return this.PlayerClass;

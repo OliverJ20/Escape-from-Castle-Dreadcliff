@@ -4,25 +4,28 @@
     android:layout_height="match_parent">
 
     <Button
-        android:text="slot 1"
+        android:text="Barbarian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/slot1"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="120dp"/>
+        android:layout_marginTop="120dp"
+        android:onClick="loadBarbarian" />
 
     <Button
-        android:text="slot 2"
+        android:text="Mage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/slot2"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:onClick="loadMage" />
     <Button
-        android:text="slot 3"
+        android:text="Rogue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/slot3"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:onClick="loadRogue" />
 </LinearLayout>

@@ -60,7 +60,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Combat"
-                    android:onClick="onCombatButtonClicked"/>
+                    android:onClick="loadRogue"/>
             </TableRow>
 
         </TableLayout>
