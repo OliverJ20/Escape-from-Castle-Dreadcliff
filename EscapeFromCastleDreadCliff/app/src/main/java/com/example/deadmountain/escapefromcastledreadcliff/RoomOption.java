@@ -11,19 +11,25 @@ import java.util.ArrayList;
 public class RoomOption {
     private String[][] RoomOptions = new String[3][3];
     private String[][] RoomOptions2 = new String[3][3];
+    private String[][] roomOptionDisplayText = new String[3][3];
     public void AddRoomOptions (ArrayList<Room> allRooms) {
-        RoomOptions2[0][0] = "BarbarianOption1";
-        RoomOptions2[0][1] = "BarbarianOption2";
+        RoomOptions2[0][0] = "Option1 open door";
+        RoomOptions2[0][1] = "Option2 kick door in";
         RoomOptions2[0][2] = "BarbarianOption3";
+        roomOptionDisplayText [0][0] = "the door is locked idiot";
+        roomOptionDisplayText [0][1] = "you make your own door wow";
+
         RoomOptions2[1][0] = "MageOption1";
         RoomOptions2[1][1] = "MageOption2";
         RoomOptions2[1][2] = "MageOption3";
+
+
         RoomOptions2[2][0] = "RougeOption1";
         RoomOptions2[2][1] = "RougeOption2";
         RoomOptions2[2][2] = "RougeOption3";
 
 
-
+        allRooms.get(0).AddOptionsDisplayText(roomOptionDisplayText);
         allRooms.get(0).AddOptions(RoomOptions2);
 
 //        Log.i ("testing a thing", RoomOptions[0][0]);

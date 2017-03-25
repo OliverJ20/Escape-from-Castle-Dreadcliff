@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private String inspectRoom = "";
     private RoomCreation allRooms;
     private RoomOption roomOption;
+    private String roomDescript = "";
 
     private String[] PlayerConditions = new String[10];
 
@@ -89,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
         allRooms.createAllRooms();
         roomOption = new RoomOption();
         roomOption.AddRoomOptions(allRooms.getAllRooms());
+        roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+
     }
 
     @Override
@@ -511,14 +514,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public String getRoomDescription()
     {
-        String roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
-        if (allRooms.getRoomFromID(PlayerRoom).getRoom() == "Storage Room")
+
+       /* if (allRooms.getRoomFromID(PlayerRoom).getRoom() == "Storage Room")
         {
             if (PlayerConditions[0] != "Torch") {
                 roomDescript = "the room is to dark to see";
             }
 
-        }
+        }*/
         return roomDescript;
 
     }
@@ -542,7 +545,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void option1ButtonHandler(View view)
     {
-        this.PlayerConditions[0] = "Torch";
+        roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][0];
+        getSupportFragmentManager()
+                .beginTransaction()
+                .detach(StoryFragment)
+                .commitNowAllowingStateLoss();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .attach(StoryFragment)
+                .commitAllowingStateLoss();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputFragment)
+                .commit();
+
+
+    }
+    public void option2ButtonHandler(View view)
+    {
+        roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][1];
         getSupportFragmentManager()
                 .beginTransaction()
                 .detach(StoryFragment)

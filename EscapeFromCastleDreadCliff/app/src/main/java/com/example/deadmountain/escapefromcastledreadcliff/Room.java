@@ -51,6 +51,7 @@ public class Room {
     private String[][] inspectChoices = new String[3][3];
     private int maxButtons = 4;
     private String[][] Options = new String[3][3];
+    private String[][] OptionsText = new String[3][3];
     private String[] Option1 = new String[11];
     private String[] Option2 = new String[11];
     private String[] Option3 = new String[11];
@@ -94,6 +95,22 @@ public class Room {
 
     public String getRoom() {
         return  roomName;
+    }
+    public void AddOptionsDisplayText (String [][] optionText)
+    {
+        this.OptionsText[0][0] = optionText[0][0];
+        this.OptionsText[0][1] = optionText[0][1];
+        /*this.Options[0][2] = option[0][2];
+        this.Options[1][0] = option[1][0];
+        this.Options[1][1] = option[1][1];
+        this.Options[1][2] = option[1][2];
+        this.Options[2][0] = option[2][0];
+        this.Options[2][1] = option[2][1];
+        this.Options[2][2] = option[2][2];*/
+    }
+    public String [][] getOptionText ()
+    {
+        return OptionsText;
     }
 
     public void AddOptions (String[][] option) {

@@ -36,7 +36,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Option 2"
-                    android:onClick=""
+                    android:onClick="option2ButtonHandler"
                     />
             </TableRow>
 
