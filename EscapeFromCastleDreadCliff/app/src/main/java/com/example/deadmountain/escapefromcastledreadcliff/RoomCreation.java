@@ -45,7 +45,7 @@ public class RoomCreation {
                 "\nDisplaying a large wooden table with hundreds of spikes in the center" +
                 "\nwith an assurtment of tools in all manner of shapes and sizes placed neatly on the wall" ;
         String tortuInspectDescription = "you are inspecting the old torture";
-        String lockedTortureDescription = "";
+        String lockedTortureDescription = "YOU CANT GET IN ";
 
 
         String hallwayDescription ="The hallway is well lit by several torches evenly spaced out along the walls";
@@ -103,11 +103,11 @@ public class RoomCreation {
         allRooms = new ArrayList<Room>();
 
         allRooms.add(0, new Room ("You are in a dark dungeon", 0, "Dungeon", 1, 2,0,0,0, "South", "", "", "",dungeonDescription, dungeonInspectDescription,"",0 ));
-        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0, "East", "", "", "",tortureDescription, tortuInspectDescription,lockedTortureDescription ,0));
+        allRooms.add(1, new Room ("Torture Room", 1, "Torture Room", 1, 2,0,0,0, "East", "", "", "",tortureDescription, tortuInspectDescription,lockedTortureDescription ,2));
         allRooms.add(2, new Room ("Hallway", 2, "Hallway", 4,1,3,5,0,"West", "East", "South", "North",hallwayDescription,hallwayInspectDescription,lockedHallwayDescription,2));
         allRooms.add(3, new Room ("Storage Room", 3, "Storage Room", 1, 2,0,0,0,"West", "", "", "",storageDescription,storageInspectDescription,lockedStorageDescription,3));
-        allRooms.add(4, new Room ("Guest bedroom", 4, "Guest Bedroom", 1, 5,0,0,0,"East", "", "", "",guestDescription, "","",0));
-        allRooms.add(5, new Room ("stairs 1st floor", 5, "stairs 1st floor", 4, 9,4,6,2,"South", "West", "East", "North",stairs1stfloorDescription, "","",0));
+        allRooms.add(4, new Room ("Guest bedroom", 4, "Guest Bedroom", 1, 5,0,0,0,"East", "", "", "",guestDescription, "","TEST HELP",0));
+        allRooms.add(5, new Room ("stairs 1st floor", 5, "stairs 1st floor", 4, 9,4,6,2,"South", "West", "East", "North",stairs1stfloorDescription, "","TESTHLLLLL",0));
         allRooms.add(6, new Room ("pantry", 6, "pantry", 2, 5,10,0,0,"West", "South", "", "",pantryDescription,"","",0));
         allRooms.add(7, new Room ("Stairs leading upstairs", 7, "Stairs leading upstairs", 1, 9,0,0,0,"South East", "", "", "",stairsupwardsDescription,"","",0));
         allRooms.add(8, new Room ("Waiting room", 8, "Waiting room", 1, 11,0,0,0,"South East", "", "", "",waitingDescription,"","",0));

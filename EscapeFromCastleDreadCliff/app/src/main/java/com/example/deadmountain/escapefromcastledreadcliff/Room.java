@@ -116,13 +116,13 @@ public class Room {
     {
         this.OptionsText[0][0] = optionText[0][0];
         this.OptionsText[0][1] = optionText[0][1];
-        /*this.Options[0][2] = option[0][2];
-        this.Options[1][0] = option[1][0];
-        this.Options[1][1] = option[1][1];
-        this.Options[1][2] = option[1][2];
-        this.Options[2][0] = option[2][0];
-        this.Options[2][1] = option[2][1];
-        this.Options[2][2] = option[2][2];*/
+        this.OptionsText[0][2] = optionText[0][2];
+        this.OptionsText[1][0] = optionText[1][0];
+        this.OptionsText[1][1] = optionText[1][1];
+        this.OptionsText[1][2] = optionText[1][2];
+        this.OptionsText[2][0] = optionText[2][0];
+        this.OptionsText[2][1] = optionText[2][1];
+        this.OptionsText[2][2] = optionText[2][2];
     }
     public String [][] getOptionText ()
     {
@@ -132,13 +132,13 @@ public class Room {
     {
         this.RoomItem[0][0] = roomItem[0][0];
         this.RoomItem[0][1] = roomItem[0][1];
-       /* this.RoomItem[0][2] = roomItem[2][2];
+        this.RoomItem[0][2] = roomItem[2][2];
         this.RoomItem[1][0] = roomItem[0][0];
         this.RoomItem[1][1] = roomItem[1][1];
         this.RoomItem[1][2] = roomItem[2][2];
         this.RoomItem[2][0] = roomItem[0][0];
         this.RoomItem[2][1] = roomItem[1][1];
-        this.RoomItem[2][2] = roomItem[2][2];*/
+        this.RoomItem[2][2] = roomItem[2][2];
 
     }
     public int[][] getRoomItems()
