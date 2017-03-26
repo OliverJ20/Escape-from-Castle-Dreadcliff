@@ -31,6 +31,7 @@ import org.json.JSONObject;
 import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 
+
 import android.content.Intent;
 import android.widget.Toast;
 
@@ -53,13 +54,16 @@ public class MainActivity extends AppCompatActivity {
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
-    private Integer PlayerRoom = 1;
+    private Integer PlayerRoom = 0;
     private String inspectRoom = "";
     private RoomCreation allRooms;
     private RoomOption roomOption;
     private String roomDescript = "";
+    private int Item = 0;
 
     private String[] PlayerConditions = new String[10];
+
+    private ArrayList<Integer> PlayerItems;
 
     private int Classid = 0;
 
@@ -91,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
         roomOption = new RoomOption();
         roomOption.AddRoomOptions(allRooms.getAllRooms());
         roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+
+        PlayerItems  = new ArrayList<Integer>();
+
+
+
 
     }
 
@@ -318,6 +327,9 @@ public class MainActivity extends AppCompatActivity {
             PlayerClass = "Barbarian";
             PlayerRoom = 0;
             Classid = 0;
+            PlayerItems.add(1);
+            Item = allRooms.getRoomFromID(PlayerRoom).getRequiredItem();
+            Log.i ("testingrequireditem", Integer.toString(allRooms.getRoomFromID(PlayerRoom).getRequiredItem()));
 
         }
         else if (selectedOption == 2) {
@@ -328,6 +340,9 @@ public class MainActivity extends AppCompatActivity {
             PlayerClass = "Mage";
             PlayerRoom = 0;
             Classid = 1;
+            PlayerItems.add(1);
+            Item = allRooms.getRoomFromID(PlayerRoom).getRequiredItem();
+
         }
         else if (selectedOption == 3) {
             getSupportFragmentManager()
@@ -337,6 +352,8 @@ public class MainActivity extends AppCompatActivity {
             PlayerClass = "Rogue";
             PlayerRoom = 0;
             Classid = 2;
+            PlayerItems.add(1);
+            Item = allRooms.getRoomFromID(PlayerRoom).getRequiredItem();
         }
         getSupportFragmentManager()
                 .beginTransaction()
@@ -400,22 +417,69 @@ public class MainActivity extends AppCompatActivity {
         return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(3);
 
     }
-
+    ///PUT IN HERE LIKE CONDITIONS TO BE MET AND TO CREATE AN ARRAYLIST FOR ITEMS TO BE STORED.
     public void topLeftButtonClickHandaler(View view) {
-        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
+        for (int i = 0; i < PlayerItems.size(); i++) {
+            int item = PlayerItems.get(i);
+            int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
+            Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
+            if (Item != item )
+            {
+                roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+            }
+            else if (Item == item) {
+                this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
+                roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+            }
+        }
         updateStoryFragment();
     }
     public void topRightButtonClickHandaler(View view) {
-        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
+        for (int i = 0; i < PlayerItems.size(); i++) {
+            int item = PlayerItems.get(i);
+            int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
+            Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
 
+            if (Item != item) {
+                roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+            }
+            else if (Item == item) {
+                this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
+                roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+            }
+        }
         updateStoryFragment();
     }
     public void bottomLeftButtonClickHandaler(View view) {
-        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
+        for (int i = 0; i < PlayerItems.size(); i++) {
+            int item = PlayerItems.get(i);
+            int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
+            Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
+
+            if (Item != item) {
+                roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+            }
+            else if (Item == item) {
+                this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
+                roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+            }
+        }
         updateStoryFragment();
     }
     public void bottomRightButtonClickHandaler(View view) {
-        this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
+        for (int i = 0; i < PlayerItems.size(); i++) {
+            int item = PlayerItems.get(i);
+            int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
+            Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
+
+            if (Item != item) {
+                roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+            }
+            else if (Item == item) {
+                this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
+                roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+            }
+        }
         updateStoryFragment();
     }
 
@@ -546,6 +610,11 @@ public class MainActivity extends AppCompatActivity {
     public void option1ButtonHandler(View view)
     {
         roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][0];
+        if (allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0] != 0) {
+            PlayerItems.add(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0]);
+        }
+        //Item = allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0];
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .detach(StoryFragment)
@@ -565,6 +634,35 @@ public class MainActivity extends AppCompatActivity {
     public void option2ButtonHandler(View view)
     {
         roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][1];
+       // Item = allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1];
+        if (allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1] != 0) {
+            PlayerItems.add(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1]);
+        }
+        Log.i ("optiontest Item", Integer.toString(Item));
+        Log.i ("optiontesting of thing", Integer.toString(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1]));
+        getSupportFragmentManager()
+                .beginTransaction()
+                .detach(StoryFragment)
+                .commitNowAllowingStateLoss();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .attach(StoryFragment)
+                .commitAllowingStateLoss();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.button_container, inputFragment)
+                .commit();
+
+
+    }
+    public void option3ButtonHandler(View view)
+    {
+        roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][2];
+       // Item = allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][2];
+        if (allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0] != 0) {
+            PlayerItems.add(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0]);
+        }
         getSupportFragmentManager()
                 .beginTransaction()
                 .detach(StoryFragment)

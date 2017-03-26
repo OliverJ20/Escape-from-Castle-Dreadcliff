@@ -52,7 +52,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Option 3"
-                    android:onClick=""/>
+                    android:onClick="option3ButtonHandler"/>
 
 
             </TableRow>

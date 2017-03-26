@@ -69,7 +69,7 @@ public class StoryFragment extends Fragment {
         //mRelativeLayout.addView(btn);
        // btn.setText("Test button");
 
-        Log.i ("testing",((MainActivity) getActivity()).Intro());
+
 
        final TextView Intro = new TextView(mContext);
         mmRelativeLayout.addView(Intro);

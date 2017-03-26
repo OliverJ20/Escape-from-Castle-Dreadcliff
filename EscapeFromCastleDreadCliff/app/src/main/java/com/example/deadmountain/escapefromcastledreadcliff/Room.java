@@ -52,15 +52,18 @@ public class Room {
     private int maxButtons = 4;
     private String[][] Options = new String[3][3];
     private String[][] OptionsText = new String[3][3];
+    private int[][]RoomItem = new int [3][3];
     private String[] Option1 = new String[11];
     private String[] Option2 = new String[11];
     private String[] Option3 = new String[11];
     private String option1Test = "";
+    private int requiredItem = 0;
+    private String lockedRoomDescription = "";
 
 
 
     //constructor
-    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String Drt1, String Drt2, String Drt3, String Drt4, String roomDescription, String roomInspect ) {
+    public Room(String inspect, int id, String name, int connectedRooms, int room1, int room2, int room3, int room4, String Drt1, String Drt2, String Drt3, String Drt4, String roomDescription, String roomInspect,String LockedRoomDescription, int RequiredItem ) {
         inspectTheRoom = inspect;
         roomID = id;
         roomName = name;
@@ -76,12 +79,23 @@ public class Room {
         this.roomDirections[1] = Drt2;
         this.roomDirections[2] = Drt3;
         this.roomDirections[3] = Drt4;
+
+        requiredItem = RequiredItem;
+        lockedRoomDescription = LockedRoomDescription;
        //option1 = Option1;
 
 
 
     }
    // public String[] getOption1(){return Option1;}
+    public String getLockedRoomDescription()
+    {
+        return lockedRoomDescription;
+    }
+    public int getRequiredItem()
+    {
+        return requiredItem;
+    }
     public String getConnectRooms(int roomIndex)
 
     {
@@ -89,7 +103,9 @@ public class Room {
     }
     public String getRoomDescription()
     {
+        Log.i ("roomtest", roomDescript);
         return roomDescript;
+
     }
     public String getRoomInspection() { return roomInspection;}
 
@@ -111,6 +127,23 @@ public class Room {
     public String [][] getOptionText ()
     {
         return OptionsText;
+    }
+    public void AddRoomItems(int [][]roomItem)
+    {
+        this.RoomItem[0][0] = roomItem[0][0];
+        this.RoomItem[0][1] = roomItem[0][1];
+       /* this.RoomItem[0][2] = roomItem[2][2];
+        this.RoomItem[1][0] = roomItem[0][0];
+        this.RoomItem[1][1] = roomItem[1][1];
+        this.RoomItem[1][2] = roomItem[2][2];
+        this.RoomItem[2][0] = roomItem[0][0];
+        this.RoomItem[2][1] = roomItem[1][1];
+        this.RoomItem[2][2] = roomItem[2][2];*/
+
+    }
+    public int[][] getRoomItems()
+    {
+        return RoomItem;
     }
 
     public void AddOptions (String[][] option) {
