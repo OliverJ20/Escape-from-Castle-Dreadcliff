@@ -8,7 +8,8 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingStart="0dp"
-    android:paddingTop="0dp">
+    android:paddingTop="0dp"
+   >
 
     <TextView
         android:id="@+id/story_header"

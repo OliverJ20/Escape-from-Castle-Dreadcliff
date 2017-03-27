@@ -27,7 +27,9 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
+
                     android:text="Move"
+
                     android:onClick="onMoveButtonClicked"/>
 
                 <Button
@@ -36,6 +38,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Inspect"
+
                     android:onClick="inspectButtonHandler"
                     />
             </TableRow>
@@ -52,6 +55,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Inventory"
+
                     android:onClick="onInventoryButtonClicked"/>
 
                 <Button
@@ -60,6 +64,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Combat"
+
                     android:onClick="loadRogue"/>
             </TableRow>
 

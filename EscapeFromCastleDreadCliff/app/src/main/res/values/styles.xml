@@ -6,6 +6,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+       <!-- <item name="android:buttonStyle">@style/newbuttonstyle</item>
+
+    </style>
+
+    <style name ="newbuttonstyle" parent = "@android:style/Widget.Button">
+        <item name ="android:background">@drawable/wings</item>
+        <item name ="android:layout_width">wrap_content</item>
+        <item name ="android:layout_height">wrap_content</item>
+
+
+
+
+
+    </style> -->
     </style>
 
 </resources>
