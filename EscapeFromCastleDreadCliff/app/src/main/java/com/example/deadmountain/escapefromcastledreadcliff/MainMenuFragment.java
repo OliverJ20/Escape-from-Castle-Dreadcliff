@@ -15,7 +15,7 @@ public class MainMenuFragment extends Fragment {
 
 
     public MainMenuFragment() {
-        // Required empty public constructor
+
     }
 
 

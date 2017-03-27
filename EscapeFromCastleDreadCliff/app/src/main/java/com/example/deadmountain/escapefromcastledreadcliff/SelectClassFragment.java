@@ -34,10 +34,6 @@ public class SelectClassFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-       // Context mContext = new Context;
-        //Button button = (Button)
 
         return inflater.inflate(R.layout.fragment_select_class, container, false);
     }

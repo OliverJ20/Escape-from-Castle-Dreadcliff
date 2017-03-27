@@ -21,23 +21,14 @@ import android.widget.TextView;
 public class InputFragment extends Fragment {
 
     public InputFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         View view = inflater.inflate(R.layout.fragment_input, container, false);
-        //RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.tableLayout1);
-        //RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.barb_button_container);
-        //RelativeLayout mmRelativeLayout = (RelativeLayout) view.findViewById(R.id.barb_text_container);
-
-
-
-
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         return view;
 
     }

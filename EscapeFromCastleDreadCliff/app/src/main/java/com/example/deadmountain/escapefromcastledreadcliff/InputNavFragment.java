@@ -21,7 +21,7 @@ import android.widget.TextView;
 public class InputNavFragment extends Fragment {
 
     public InputNavFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -29,7 +29,6 @@ public class InputNavFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_input_navigate, container, false);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
         Button topLEFTbtn = (Button) view.findViewById(R.id.topLEFTbtn);
         Button topRIGHTbtn = (Button) view.findViewById(R.id.topRIGHTbtn);
@@ -76,19 +75,8 @@ public class InputNavFragment extends Fragment {
         {
             bottomRightbtn.setVisibility(View.VISIBLE);
         }
-
-
-
-
-
-
-
-
         return view;
-
     }
-
-
 }
 
 

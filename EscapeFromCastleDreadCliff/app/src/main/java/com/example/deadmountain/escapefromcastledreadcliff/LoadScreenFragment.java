@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 public class LoadScreenFragment extends Fragment {
 
     public LoadScreenFragment() {
-        // Required empty public constructor
+
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

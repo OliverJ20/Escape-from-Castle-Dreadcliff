@@ -11,10 +11,10 @@
     android:paddingTop="0dp">
 
     <TextView
-        android:id="@+id/mage_header"
+        android:id="@+id/story_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="you are a mage"
+        android:text=""
         android:textSize="30dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"/>
@@ -22,17 +22,21 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mage_header"
-        android:id="@+id/mage_button_container"
+        android:layout_below="@id/story_header"
+
+        android:id="@+id/story_button_container"
         android:layout_alignParentStart="true"></RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mage_button_container"
-        android:id="@+id/mage_text_container"
-        android:layout_alignParentStart="true"></RelativeLayout>
-
+        android:id="@+id/story_text_container"
+        android:text =""
+        android:layout_below="@+id/story_button_container"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="56dp"></RelativeLayout>
 
 
 </RelativeLayout>
+

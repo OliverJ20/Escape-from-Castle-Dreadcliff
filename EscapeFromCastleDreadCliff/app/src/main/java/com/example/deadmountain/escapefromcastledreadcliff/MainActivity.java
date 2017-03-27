@@ -43,8 +43,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    // private NewGameFragment newGamefragment;
-    // private SelectClassFragment selectClassfragment;
     private SelectClassFragment selectClassFragment;
     private StoryFragment StoryFragment;
     private InputFragment inputFragment;
@@ -53,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private InspectOptionFragment inspectOptionFragment;
     private InspectionFragment inspectionFragment;
     private MainMenuFragment mainMenuFragment;
-
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
@@ -63,31 +60,16 @@ public class MainActivity extends AppCompatActivity {
     private RoomOption roomOption;
     private String roomDescript = "";
     private int Item = 0;
-
     private String[] PlayerConditions = new String[10];
-
     private ArrayList<Integer> PlayerItems;
-
     private int Classid = 0;
-
-//    ArrayList<Room> allRooms = new ArrayList<Room>();
-//    Room gameRooms = new Room ("You are in a dark dungeon", 0, "Dungeon");
-//    boolean test = allRooms.add(gameRooms);
-
-    //RoomCreation test = new RoomCreation();
-
-
-
-    private String intro = "";
     private int inSelectScreen = 0;
     private int inLoadingScreen = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_main_menu);
-        //   newGamefragment = new NewGameFragment();
         selectClassFragment = new SelectClassFragment();
         StoryFragment = new StoryFragment();
         inputFragment = new InputFragment();
@@ -100,16 +82,8 @@ public class MainActivity extends AppCompatActivity {
         roomOption = new RoomOption();
         roomOption.AddRoomOptions(allRooms.getAllRooms());
         mainMenuFragment = new MainMenuFragment();
-
         roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
-
-
-
         PlayerItems  = new ArrayList<Integer>();
-
-
-
-
     }
 
     @Override
@@ -121,14 +95,12 @@ public class MainActivity extends AppCompatActivity {
         {
             getSupportFragmentManager()
                     .beginTransaction()
-
                     .replace(R.id.fragment_container,mainMenuFragment)
                     .commit();
         }
         else {
             getSupportFragmentManager()
                     .beginTransaction()
-
                     .replace(R.id.button_container,inputFragment)
                     .commit();
         }
@@ -141,11 +113,8 @@ public class MainActivity extends AppCompatActivity {
         loadbutton.setVisibility(View.INVISIBLE);
         getSupportFragmentManager()
                 .beginTransaction()
-
                 .replace(R.id.fragment_container, selectClassFragment)
-
                 .commit();
-       // onBackPressed();
     }
     public void loadScreenHandler(View view) {
         inLoadingScreen = 1;
@@ -156,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragment_container, loadScreenFragment)
                 .commit();
-
     }
 
     public void saveGame() {
@@ -283,7 +251,6 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack("navinput")
                 .replace(R.id.button_container, inputNavFragment)
                 .commit();
-
     }
 
     public void test(View view) {
@@ -311,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
     public void onInventoryButtonClicked(View view) {
 
     }
+
     public void onRadioButtonClicked(View view)
     {
         boolean checked = ((RadioButton)view).isChecked();
@@ -341,19 +309,15 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
         }
-
-
-
     }
     public void buttonSubmitClick(View view) {
         if (selectedOption == 1) {
-          //Button button = (Button) findViewById(R.id.option1RadioButton);
+
            inSelectScreen = 0;
            inLoadingScreen = 0;
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, StoryFragment)
-
                     .commit();
             PlayerClass = "Barbarian";
             PlayerRoom = 0;
@@ -365,8 +329,6 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.button_container, inputFragment)
                     .commit();
-
-
         }
         else if (selectedOption == 2) {
             inSelectScreen = 0;
@@ -403,59 +365,15 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.button_container, inputFragment)
                     .commit();
         }
-      /*  getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inputFragment)
-                .commit();*/
-        //Intent intent = new Intent (SelectClassFragment.this, MainActivity);
-
     }
-
-
-    public String Intro()
-    {
-         intro = "You awake to the sound of thunder echoing from outside" +
-                "\nthe sound of rain hitting stone." +
-                "\nYou find yourself in a small jail cell, with a single torch on the" +
-                "\non the other side lighting the room. ";
-        return intro;
-
-    }
-   // onInputNavButtonClicked
-
-    public String InspectRoom()
-    {
-       /* if (PlayerRoom == "Dungeon")
-        {
-            inspectRoom = "your in the dungeon";
-
-               Button button = (Button) inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn);
-                //button.setText("N");
-           // Log.i("testo", (inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn).toString()));
-
-            return inspectRoom;
-        }
-
-
-
-        return"";*/
-       // Button button = (Button) inputNavFragment.getActivity().findViewById(R.id.bottomLEFTbtn);
-        Integer help = 0;
-        return allRooms.getRoomFromID(PlayerRoom).getRoomInspect(PlayerClass);
-
-        //return gameRooms.getRoomInspect(PlayerClass);
-    }
-
 
     public String topLeftbutton()
     {
         return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0);
-
     }
     public String topRightbutton()
     {
        return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(1);
-
     }
 
     public String BottomLeftbutton()
@@ -465,25 +383,19 @@ public class MainActivity extends AppCompatActivity {
     public String BottomRightbutton()
     {
         return allRooms.getRoomFromID(PlayerRoom).getConnectRooms(3);
-
     }
-    ///PUT IN HERE LIKE CONDITIONS TO BE MET AND TO CREATE AN ARRAYLIST FOR ITEMS TO BE STORED.
+
     public void topLeftButtonClickHandaler(View view) {
 
         for (int i = 0; i < PlayerItems.size(); i++) {
             int item = PlayerItems.get(i);
             int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
             Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
-            Log.i ("testing item", Integer.toString(item));
-            Log.i ("testing ITEM", Integer.toString(Item));
-            Log.i ("testing room", allRooms.getRoomFromID(movingToRoom).getRoom());
-
             if (Item != item )
             {
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
             }
             else if (Item == item) {
-                Log.i ("they got here", "here is topleftbtn");
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
@@ -495,23 +407,14 @@ public class MainActivity extends AppCompatActivity {
             int item = PlayerItems.get(i);
             int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
             Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
-            Log.i ("testing item", Integer.toString(item));
-            Log.i ("testing ITEM", Integer.toString(Item));
-            Log.i ("testing room", allRooms.getRoomFromID(movingToRoom).getRoom());
-
             if (Item != item) {
-                Log.i ("is it getting here", "seems so");
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
             }
             else if (Item == item) {
-                Log.i ("they got here", "here is toprightbtn");
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
-            Log.i ("testing moving", Integer.toString(movingToRoom));
-            Log.i ("testing playroom", Integer.toString(PlayerRoom));
         }
-
         updateStoryFragment();
     }
     public void bottomLeftButtonClickHandaler(View view) {
@@ -519,10 +422,6 @@ public class MainActivity extends AppCompatActivity {
             int item = PlayerItems.get(i);
             int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
             Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
-            Log.i ("testing item", Integer.toString(item));
-            Log.i ("testing ITEM", Integer.toString(Item));
-            Log.i ("testing room", allRooms.getRoomFromID(movingToRoom).getRoom());
-
             if (Item != item) {
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
             }
@@ -538,16 +437,11 @@ public class MainActivity extends AppCompatActivity {
             int item = PlayerItems.get(i);
             int movingToRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
             Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
-            Log.i ("testing item", Integer.toString(item));
-            Log.i ("testing ITEM", Integer.toString(Item));
-            Log.i ("testing room", allRooms.getRoomFromID(movingToRoom).getRoom());
-
             if (Item != item) {
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
             }
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
-                Log.i ("they got here", "here is bottomrightbtn");
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
@@ -556,52 +450,24 @@ public class MainActivity extends AppCompatActivity {
 
     public String roomAndInspectText()
     {
-      //  TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.intro_id);
-     //   Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
         return  allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection();
     }
 
 
-
    public void inspectButtonHandler(View view)
     {
-        TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.intro_id);
-       // Inspect.setText(allRooms.getRoomFromID(PlayerRoom).getRoomDescription() + "\n\n" +allRooms.getRoomFromID(PlayerRoom).getRoomInspection());
-        //Inspect.setText(roomAndInspectText()+ "\n"+"Option 1 is to kill a dude\nOption 2 do a thing\nOption 3 have fun");
-
-
-
-        /*Inspect.setText(roomAndInspectText()+ "\n"
-                + allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
-                +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[1][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
-                +"\n"+allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[2][allRooms.getRoomFromID(PlayerRoom).getRoomID()]);*/
-
-
+        TextView Inspect = (TextView) StoryFragment.getActivity().findViewById(R.id.main_text_id);
         Inspect.setText(roomAndInspectText() + "\n"
         + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][0]
         + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][1]
         + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][2]);
-               // allRooms.getRoomFromID(PlayerRoom).getRoomOptions(PlayerClass)[0][allRooms.getRoomFromID(PlayerRoom).getRoomID()]
-
-
-        if (allRooms.getRoomFromID(PlayerRoom).getRoom() == "Storage Room")
-        {
-            if (PlayerConditions[0] != "Torch") {
-                Inspect.setText( "the room is to dark to see");
-            }
-
-        }
-
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("navinput")
                 .replace(R.id.button_container, inspectOptionFragment)
                 .commit();
-
-
-
     }
+
     public String option1ButtonCheck()
     {
         return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][0];
@@ -616,32 +482,6 @@ public class MainActivity extends AppCompatActivity {
         return allRooms.getRoomFromID(PlayerRoom).getOptions(PlayerClass)[Classid][2];
     }
 
-
-    public void moveRoomButtonHandler(View view)
-    {
-            if (allRooms.getRoomFromID(PlayerRoom).getConnectRooms(0) == "S")
-            {
-                PlayerRoom = 1;
-                Log.i("testing",allRooms.getRoomFromID(PlayerRoom).getRoom() );
-                // TextView Header = (TextView) StoryFragment.getActivity().findViewById(R.id.storyHeader);
-                //Header.setText(allRooms.getRoomFromID(PlayerRoom).getRoom());
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .detach(StoryFragment)
-                        .commitNowAllowingStateLoss();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .attach(StoryFragment)
-                        .commitAllowingStateLoss();
-
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.button_container, inputFragment)
-                        .commit();
-
-            }
-    }
-
     public String getPlayerRoomName()
     {
         return allRooms.getRoomFromID(PlayerRoom).getRoom();
@@ -649,35 +489,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public String getRoomDescription()
     {
-
-       /* if (allRooms.getRoomFromID(PlayerRoom).getRoom() == "Storage Room")
-        {
-            if (PlayerConditions[0] != "Torch") {
-                roomDescript = "the room is to dark to see";
-            }
-
-
-        }*/
         roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
         return roomDescript;
-
     }
+
     public String getRoomInspection()
     {
         return allRooms.getRoomFromID(PlayerRoom).getRoomInspection();
-    }
-    public String[] inspectOptions()
-    {
-        if (allRooms.getRoomFromID(PlayerRoom).getRoomID() == 0 )
-        {
-            String option1 = "hit thing";
-            String option2 = "break thing";
-            String option3 = "end thing";
-            String[] options = {option1, option2, option3};
-            return options;
-        }
-        return null;
-
     }
 
     public void option1ButtonHandler(View view)
@@ -686,75 +504,24 @@ public class MainActivity extends AppCompatActivity {
         if (allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0] != 0) {
             PlayerItems.add(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0]);
         }
-        //Item = allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0];
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .detach(StoryFragment)
-                .commitNowAllowingStateLoss();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .attach(StoryFragment)
-                .commitAllowingStateLoss();
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inputFragment)
-                .commit();
+        updateStoryFragment();
 
 
     }
     public void option2ButtonHandler(View view)
     {
         roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][1];
-       // Item = allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1];
         if (allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1] != 0) {
             PlayerItems.add(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1]);
         }
-        Log.i ("optiontest Item", Integer.toString(Item));
-        Log.i ("optiontesting of thing", Integer.toString(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][1]));
-        getSupportFragmentManager()
-                .beginTransaction()
-                .detach(StoryFragment)
-                .commitNowAllowingStateLoss();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .attach(StoryFragment)
-                .commitAllowingStateLoss();
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inputFragment)
-                .commit();
-
-
+        updateStoryFragment();
     }
     public void option3ButtonHandler(View view)
     {
         roomDescript = roomAndInspectText() + "\n" + allRooms.getRoomFromID(PlayerRoom).getOptionText()[Classid][2];
-       // Item = allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][2];
         if (allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0] != 0) {
             PlayerItems.add(allRooms.getRoomFromID(PlayerRoom).getRoomItems()[Classid][0]);
         }
-        getSupportFragmentManager()
-                .beginTransaction()
-                .detach(StoryFragment)
-                .commitNowAllowingStateLoss();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .attach(StoryFragment)
-                .commitAllowingStateLoss();
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.button_container, inputFragment)
-                .commit();
-
-
+       updateStoryFragment();
     }
-
-
-
-
-
 }

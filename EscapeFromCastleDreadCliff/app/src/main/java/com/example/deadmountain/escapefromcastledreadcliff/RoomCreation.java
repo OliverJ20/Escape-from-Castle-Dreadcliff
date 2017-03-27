@@ -116,16 +116,6 @@ public class RoomCreation {
         allRooms.add(11, new Room ("Front door", 11, "Front door",3, 8,12,9,0,"North West", "South East", "North", "",frontdoorDescription,"","",0));
         allRooms.add(12, new Room ("Dinning room", 12, "Dinning room", 3, 9,11,10,0,"North West", "South West", "North", "",dinningDescription,"","",0));
 
-
-
-
-        // basic skeleton of how each room will be made
-
-
-
-
-
-
     }
 
     public Room getRoomFromID(int roomID) {

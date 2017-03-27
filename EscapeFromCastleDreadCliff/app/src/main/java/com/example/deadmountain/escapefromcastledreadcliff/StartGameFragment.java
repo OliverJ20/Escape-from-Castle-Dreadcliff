@@ -34,35 +34,19 @@ public class StartGameFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_start_game, container, false);
         RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.button_container);
 
-
         Context mContext = getContext();
         Button btn = new Button(mContext);
         mRelativeLayout.addView(btn);
-        btn.setText("New GGame");
-        Log.i ("test", "hello");
+        btn.setText("New Game");
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Perform action on click
-              //  Log.i("testing", "will this work");
+
                 Button b = (Button) view;
                 ((MainActivity)getActivity()).startGameHandler(view);
-               //((MainActivity) getActivity()).saveAnswer(qID, person_id, b.getText().toString());
-                //((MainActivity) getActivity()).selectionQuestion(view);
             }
         });
-
-
-
-
-
-        // Inflate the layout for this fragment
         return view;
-
-
-
-
     }
-
 }
