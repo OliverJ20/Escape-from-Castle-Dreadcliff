@@ -11,7 +11,10 @@
         android:text=""
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:background="@drawable/sign"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <LinearLayout
         android:orientation="vertical"
