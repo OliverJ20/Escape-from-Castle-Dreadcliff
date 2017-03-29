@@ -10,7 +10,9 @@
         android:id="@+id/slot1"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="120dp"
-        android:onClick="loadBarbarian" />
+        android:onClick="loadBarbarian"
+        android:textColor="#DAA520"
+        android:background="@drawable/sign" />
 
     <Button
         android:text="Mage"
@@ -19,7 +21,10 @@
         android:id="@+id/slot2"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:onClick="loadMage" />
+        android:onClick="loadMage"
+        android:textColor="#DAA520"
+        android:background="@drawable/sign" />
+
     <Button
         android:text="Rogue"
         android:layout_width="wrap_content"
@@ -27,6 +32,8 @@
         android:id="@+id/slot3"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:onClick="loadRogue" />
+        android:onClick="loadRogue"
+        android:textColor="#DAA520"
+        android:background="@drawable/sign" />
 
 </LinearLayout>
