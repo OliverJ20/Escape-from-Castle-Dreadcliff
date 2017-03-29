@@ -8,13 +8,14 @@
         android:id="@+id/story_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:background="@drawable/sign"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:textColor="#DAA520"
+        android:paddingBottom="5dp" />
 
     <LinearLayout
         android:orientation="vertical"

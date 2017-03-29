@@ -7,9 +7,8 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="154dp" android:layout_width="fill_parent"
-        >
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="140dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tableLayout1"
@@ -25,19 +24,24 @@
                 <Button
                     android:id="@+id/Option1"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Option 1"
-                    android:onClick="option1ButtonHandler"/>
+                    android:onClick="option1ButtonHandler"
+                    android:background="@drawable/button"
+                    android:textColor="#DAA520"
+                    android:layout_margin="5dp" />
 
                 <Button
                     android:id="@+id/Option2"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Option 2"
                     android:onClick="option2ButtonHandler"
-                    />
+                    android:background="@drawable/button"
+                    android:textColor="#DAA520"
+                    android:layout_margin="5dp" />
             </TableRow>
 
             <TableRow
@@ -49,12 +53,13 @@
                 <Button
                     android:id="@+id/Option3"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Option 3"
-                    android:onClick="option3ButtonHandler"/>
-
-
+                    android:textColor="#DAA520"
+                    android:onClick="option3ButtonHandler"
+                    android:background="@drawable/button"
+                    android:layout_margin="5dp" />
             </TableRow>
 
         </TableLayout>

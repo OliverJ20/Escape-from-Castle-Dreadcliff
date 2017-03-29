@@ -7,9 +7,8 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="154dp" android:layout_width="fill_parent"
-        >
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="140dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tableLayout1"
@@ -25,22 +24,25 @@
                 <Button
                     android:id="@+id/movebtn"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="Move"
-
-                    android:onClick="onMoveButtonClicked"/>
+                    android:textColor="#DAA520"
+                    android:onClick="onMoveButtonClicked"
+                    android:background="@drawable/button"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
 
                 <Button
                     android:id="@+id/inspBTN"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Inspect"
-
+                    android:textColor="#DAA520"
                     android:onClick="inspectButtonHandler"
-                    />
+                    android:background="@drawable/button"
+                    android:layout_margin="5dp" />
             </TableRow>
 
             <TableRow
@@ -52,20 +54,24 @@
                 <Button
                     android:id="@+id/invBTN"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Inventory"
-
-                    android:onClick="onInventoryButtonClicked"/>
+                    android:textColor="#DAA520"
+                    android:onClick="onInventoryButtonClicked"
+                    android:background="@drawable/button"
+                    android:layout_margin="5dp" />
 
                 <Button
                     android:id="@+id/combBTN"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Combat"
-
-                    android:onClick="loadRogue"/>
+                    android:textColor="#DAA520"
+                    android:onClick="onCombatButtonClicked"
+                    android:background="@drawable/button"
+                    android:layout_margin="5dp" />
             </TableRow>
 
         </TableLayout>
