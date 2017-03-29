@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 
@@ -31,8 +32,9 @@ public class StoryFragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_story, container, false);
-        RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.story_button_container);
-        RelativeLayout mmRelativeLayout = (RelativeLayout) view.findViewById(R.id.story_text_container);
+//        RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.story_button_container);
+//        RelativeLayout mmRelativeLayout = (RelativeLayout) view.findViewById(R.id.story_text_container);
+
 
 
         final TextView Header = (TextView) view.findViewById(R.id.story_header);
@@ -48,18 +50,19 @@ public class StoryFragment extends Fragment {
         Context mContext = getContext();
 
 
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-        layoutParams.setMargins(30, 30,0, 0);
+//        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+//        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+//        layoutParams.setMargins(30, 30,0, 0);
+//
+//       final TextView MainText = new TextView(mContext);
+//        mmRelativeLayout.addView(MainText);
+//        MainText.setText(((MainActivity)getActivity()).getRoomDescription());
+//        MainText.setId(R.id.main_text_id);
 
-
-       final TextView MainText = new TextView(mContext);
-        mmRelativeLayout.addView(MainText);
+        final TextView MainText = (TextView) view.findViewById(R.id.story_text);
         MainText.setText(((MainActivity)getActivity()).getRoomDescription());
         MainText.setId(R.id.main_text_id);
-
-
         return view;
 
     }

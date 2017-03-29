@@ -28,7 +28,7 @@ public class InspectionFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_inspection, container, false);
-        RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.story_button_container);
+        //RelativeLayout mRelativeLayout = (RelativeLayout) view.findViewById(R.id.story_button_container);
         RelativeLayout mmRelativeLayout = (RelativeLayout) view.findViewById(R.id.inspect_text_container);
 
         final TextView Header = (TextView) view.findViewById(R.id.inspect_header);
