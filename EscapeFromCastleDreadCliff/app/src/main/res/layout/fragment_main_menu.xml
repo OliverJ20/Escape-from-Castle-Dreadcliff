@@ -24,6 +24,21 @@
 
     <!--</FrameLayout>-->
 
+    <TextView
+        android:text="Escape from Castle Dread Cliff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:contextClickable="false"
+        android:textColor="#DAA520"
+        android:textAlignment="center"
+        android:background="@drawable/sign"
+        android:paddingTop="10dp"
+        android:textSize="18sp"
+        android:paddingBottom="10dp" />
+
     <LinearLayout android:id="@+id/fragment_container" android:layout_weight="3" android:layout_height="fill_parent" android:layout_width="fill_parent"/>
     <LinearLayout android:id="@+id/button_container" android:layout_weight="1" android:layout_height="fill_parent" android:layout_width="fill_parent"/>
 
