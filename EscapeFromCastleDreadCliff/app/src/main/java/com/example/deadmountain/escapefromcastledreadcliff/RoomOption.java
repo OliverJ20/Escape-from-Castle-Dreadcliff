@@ -552,9 +552,9 @@ public class RoomOption {
 
 
 
-        allRooms.get(2).AddOptions(RoomOptions2);
-        allRooms.get(2).AddOptionsDisplayText(roomOptionDisplayText);
-        allRooms.get(2).AddRoomItems(RoomItems);
+        allRooms.get(12).AddOptions(RoomOptions2);
+        allRooms.get(12).AddOptionsDisplayText(roomOptionDisplayText);
+        allRooms.get(12).AddRoomItems(RoomItems);
 
 
 
