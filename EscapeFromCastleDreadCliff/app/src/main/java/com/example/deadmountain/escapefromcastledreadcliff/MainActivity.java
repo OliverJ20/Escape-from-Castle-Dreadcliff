@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private int Classid = 0;
     private int inSelectScreen = 0;
     private int inLoadingScreen = 0;
+    private String backUpRoomDescription = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
         view.setVisibility(View.INVISIBLE);
         View loadbutton = findViewById(R.id.loadGameButton);
         loadbutton.setVisibility(View.INVISIBLE);
+        View MainTitle = findViewById(R.id.mainTitle);
+        MainTitle.setVisibility(View.INVISIBLE);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, selectClassFragment)
@@ -394,10 +397,13 @@ public class MainActivity extends AppCompatActivity {
             if (Item != item )
             {
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+
             }
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+                Log.i ("testing DROOOm", roomDescript);
+                backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
         updateStoryFragment();
@@ -409,10 +415,13 @@ public class MainActivity extends AppCompatActivity {
             Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
             if (Item != item) {
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+
             }
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+                Log.i ("testing DROOOm111", roomDescript);
+                backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
         updateStoryFragment();
@@ -424,13 +433,18 @@ public class MainActivity extends AppCompatActivity {
             Item = allRooms.getRoomFromID(movingToRoom).getRequiredItem();
             if (Item != item) {
                 roomDescript = allRooms.getRoomFromID(movingToRoom).getLockedRoomDescription();
+
             }
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+                Log.i ("testing DROOOm", roomDescript);
+                backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
+
         updateStoryFragment();
+
     }
     public void bottomRightButtonClickHandaler(View view) {
         for (int i = 0; i < PlayerItems.size(); i++) {
@@ -443,6 +457,8 @@ public class MainActivity extends AppCompatActivity {
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+                Log.i ("testing DROOOm333", roomDescript);
+                backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
         updateStoryFragment();
@@ -489,8 +505,15 @@ public class MainActivity extends AppCompatActivity {
     }
     public String getRoomDescription()
     {
-        roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+      //  roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
+
+        Log.i ("teng DROOOfbdfbgr222", roomDescript);
+        if (roomDescript == "")
+        {
+            return backUpRoomDescription;
+        }
         return roomDescript;
+
     }
 
     public String getRoomInspection()
