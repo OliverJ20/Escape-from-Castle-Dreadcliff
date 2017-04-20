@@ -22,7 +22,7 @@ public class RoomOption {
         roomOptionDisplayText [0][2] = "As you stare out of the single window of your cell, you are greating by the familiar light of thunder, its sound shaking the very walls.\n" +
                                "It also reveals that below you are many large sharp rocks, jumping out the window is probably not the best idea.";
         RoomItems[0][0] = 0;
-        RoomItems[0][1] = 002;
+        RoomItems[0][1] = 2;
         RoomItems[0][2] = 0;
 
 
@@ -35,7 +35,7 @@ public class RoomOption {
         roomOptionDisplayText [1][2] = "As you stare out of the single window of your cell, you are greating by the familiar light of thunder, its sound shaking the very walls." +
                 "\nIt also reveals that below you are many large sharp rocks, jumping out the window is probably not the best idea. ";
         RoomItems[1][0] = 0;
-        RoomItems[1][1] = 002;
+        RoomItems[1][1] = 2;
         RoomItems[1][2] = 0;
 
 
@@ -48,7 +48,7 @@ public class RoomOption {
         roomOptionDisplayText [2][2] = "As you stare out of the single window of your cell, you are greating by the familiar light of thunder, its sound shaking the very walls." +
                 "\nIt also reveals that below you are many large sharp rocks, jumping out the window is probably not the best idea. ";
         RoomItems[2][0] = 0;
-        RoomItems[2][1] = 002;
+        RoomItems[2][1] = 2;
         RoomItems[2][2] = 0;
 
 
@@ -61,39 +61,39 @@ public class RoomOption {
 
         RoomOptions2[0][0] = "Option1 Pick up a torture tool";
         RoomOptions2[0][1] = "Option2 Lay on the table";
-        RoomOptions2[0][2] = "";
+        RoomOptions2[0][2] = "Option3 Pick up bloody tool";
         roomOptionDisplayText [0][0] = "You reach to pick a sharpe tool from a rack, however has you try to pull it off you are unable to." +
                 "\nUsing all your might you simply can't remove one of these tools, something has bound them to this spot.";
         roomOptionDisplayText [0][1] = "As you lie down on the table, in a room stained with blood all around you ask yourself 'why?'";
-        roomOptionDisplayText [0][2] = "";
+        roomOptionDisplayText [0][2] = "Pick up bloody tool";
         RoomItems[0][0] = 0;
         RoomItems[0][1] = 0;
-        RoomItems[0][2] = 0;
+        RoomItems[0][2] = 4;
 
 
         RoomOptions2[1][0] = "Option1 Cast a arcania spell";
         RoomOptions2[1][1] = "Option2 Lay on the table";
-        RoomOptions2[1][2] = "";
+        RoomOptions2[1][2] = "Option3 Pick up bloody tool";
         roomOptionDisplayText [1][0] = "The ominousness precnese of this room has put you on edge, you start to cast a spell call detect magic." +
                 "\nbegining to chant once more, runes start floating around you and with a sudden clap of your hands they explode out lighting the room in a blue aura." +
                 "\nWhatever has happened in this room, it is coated with incredible magic everywhere, blinding you with blue light till the effect of the spells fades away.";
         roomOptionDisplayText [1][1] = "As you lie down on the table, in a room stained with blood all around you ask yourself 'why?'";
-        roomOptionDisplayText [1][2] = "";
+        roomOptionDisplayText [1][2] = "ya pick up the tool";
         RoomItems[1][0] = 0;
         RoomItems[1][1] = 0;
-        RoomItems[1][2] = 0;
+        RoomItems[1][2] = 4;
 
 
         RoomOptions2[2][0] = "Option1 Inspect the asortment of tools along the wall";
         RoomOptions2[2][1] = "Option2 Lay on the table";
-        RoomOptions2[2][2] = "";
+        RoomOptions2[2][2] = "Option3 Pick up bloody tool";
         roomOptionDisplayText [2][0] = "As you inspect the tools, you recognize quiet a few of them from dealings in the past." +
                 "\nThe more you notice however the more you realize, this room was not used to gain information, it was used to gain pleasure out of others pain.";
         roomOptionDisplayText [2][1] = "As you lie down on the table, in a room stained with blood all around you ask yourself 'why?'";
-        roomOptionDisplayText [2][2] = "";
+        roomOptionDisplayText [2][2] = "ya pick up the tool";
         RoomItems[2][0] = 0;
         RoomItems[2][1] = 0;
-        RoomItems[2][2] = 0;
+        RoomItems[2][2] = 4;
 
 
 
@@ -148,7 +148,7 @@ public class RoomOption {
                 "\nafter all your searching you find a old dented steel helmet, it isn't much but it fits, 'ah these rags are fine anyway, they show of my ripped muscles' you say to yourself" +
                 "\ntrying to convience yourself your not insecure about being in rags.";
         roomOptionDisplayText [1][2] = "";
-        RoomItems[0][0] = 0;
+        RoomItems[0][0] = 5;
         RoomItems[0][1] = 0;
         RoomItems[0][2] = 0;
 
@@ -162,7 +162,7 @@ public class RoomOption {
                 "\nafter all your searching you find a dirty old black robe, covered in dust and spots of blood, with letters intitched that you don't recognize." +
                 "\n'Its better then rags you say' as you put on the old robe";
         roomOptionDisplayText [1][2] = "";
-        RoomItems[1][0] = 0;
+        RoomItems[1][0] = 5;
         RoomItems[1][1] = 0;
         RoomItems[1][2] = 0;
 
@@ -177,7 +177,7 @@ public class RoomOption {
                 "\nafter all your searching you find a dirty old black robe, covered in dust and spots of blood, with letters intitched that you don't recognize." +
                 "\n'Its better then rags you say, least the black helps me blend into the shadows better' as you put on the old robe";
         roomOptionDisplayText [2][2] = "";
-        RoomItems[2][0] = 0;
+        RoomItems[2][0] = 5;
         RoomItems[2][1] = 0;
         RoomItems[2][2] = 0;
 
@@ -214,13 +214,13 @@ public class RoomOption {
         RoomOptions2[2][0] = "Option1 Lie down in the bed";
         RoomOptions2[2][1] = "Look for something to steal";
         RoomOptions2[2][2] = "";
-        roomOptionDisplayText [1][0] = "You lie down on perhaps the softest matress you have ever slept on, dirtying all the fine bed sheets layed out." +
+        roomOptionDisplayText [2][0] = "You lie down on perhaps the softest matress you have ever slept on, dirtying all the fine bed sheets layed out." +
                 "\nAlthough nice at first the bed begins to itch and you decide it might be better to keep going then taking a nap";
-        roomOptionDisplayText [1][1] = "You begin to search the room more thoroughly, however all you seem to find is a small rabbit doll." +
+        roomOptionDisplayText [2][1] = "You begin to search the room more thoroughly, however all you seem to find is a small rabbit doll." +
                 "Thinking it potentially has emotional value to someone over monetary you decide to keep it";
-        roomOptionDisplayText [1][2] = "";
+        roomOptionDisplayText [2][2] = "";
         RoomItems[2][0] = 0;
-        RoomItems[2][1] = 0;
+        RoomItems[2][1] = 6;
         RoomItems[2][2] = 0;
 
 
@@ -357,7 +357,7 @@ public class RoomOption {
         roomOptionDisplayText [0][0] = "As you pick up the photo, a feeling of familiarity washes over you, you swear you have seen this women before but you can't put a name to face.";
         roomOptionDisplayText [0][1] = "As you sip the tea, it is very cold, it must of been sitting here for hours, maybe even days. ";
         roomOptionDisplayText [0][2] = "";
-        RoomItems[0][0] = 0;
+        RoomItems[0][0] = 7;
         RoomItems[0][1] = 0;
         RoomItems[0][2] = 0;
 
@@ -368,7 +368,7 @@ public class RoomOption {
         roomOptionDisplayText [1][0] = "As you pick up the photo, a feeling of familiarity washes over you, you swear you have seen this women before but you can't put a name to face.";
         roomOptionDisplayText [1][1] = "As you sip the tea, it is very cold, it must of been sitting here for hours, maybe even days. ";
         roomOptionDisplayText [1][2] = "";
-        RoomItems[1][0] = 0;
+        RoomItems[1][0] = 7;
         RoomItems[1][1] = 0;
         RoomItems[1][2] = 0;
 
@@ -378,7 +378,7 @@ public class RoomOption {
         roomOptionDisplayText [2][0] = "As you pick up the photo, a feeling of familiarity washes over you, you swear you have seen this women before but you can't put a name to face.";
         roomOptionDisplayText [2][1] = "As you sip the tea, it is very cold, it must of been sitting here for hours, maybe even days. ";
         roomOptionDisplayText [2][2] = "";
-        RoomItems[2][0] = 0;
+        RoomItems[2][0] = 7;
         RoomItems[2][1] = 0;
         RoomItems[2][2] = 0;
 
