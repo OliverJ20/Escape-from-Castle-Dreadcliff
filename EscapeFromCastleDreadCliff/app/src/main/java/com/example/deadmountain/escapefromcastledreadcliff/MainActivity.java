@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private InspectOptionFragment inspectOptionFragment;
     private InspectionFragment inspectionFragment;
     private MainMenuFragment mainMenuFragment;
+    private GameOverFragment gameOverFragment;
     private int selectedOption = 0;
     private String selectedString = "0";
     private String PlayerClass = "";
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_main_menu);
         selectClassFragment = new SelectClassFragment();
+        gameOverFragment = new GameOverFragment();
         StoryFragment = new StoryFragment();
         inputFragment = new InputFragment();
         inputNavFragment = new InputNavFragment();
@@ -117,6 +119,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, selectClassFragment)
+                .commit();
+    }
+    public void mainMenuHandler(View view) {
+        inSelectScreen = 1;
+        view.setVisibility(View.INVISIBLE);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, gameOverFragment)
                 .commit();
     }
     public void loadScreenHandler(View view) {
