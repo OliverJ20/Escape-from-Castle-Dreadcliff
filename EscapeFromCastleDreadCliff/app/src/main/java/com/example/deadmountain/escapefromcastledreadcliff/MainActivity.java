@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private LoadScreenFragment loadScreenFragment;
     private InspectOptionFragment inspectOptionFragment;
     private InspectionFragment inspectionFragment;
+    private CombatFragment combatFragment;
     private MainMenuFragment mainMenuFragment;
     private GameOverFragment gameOverFragment;
     private int selectedOption = 0;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     private int inSelectScreen = 0;
     private int inLoadingScreen = 0;
     private String backUpRoomDescription = "";
+    private int playerRoll = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         mainMenuFragment = new MainMenuFragment();
         roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
         PlayerItems  = new ArrayList<Integer>();
+        combatFragment = new CombatFragment();
     }
 
     @Override
@@ -492,6 +495,30 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack("navinput")
                 .replace(R.id.button_container, inspectOptionFragment)
                 .commit();
+    }
+    public void combatButtonHandler(View view)
+    {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack("navinput")
+                .replace(R.id.button_container, combatFragment)
+                .commit();
+
+    }
+    public void attackButtonHandler(View view)
+    {
+        playerRoll = (int)(Math.random()*20) + 1;
+        TextView displayText = (TextView) StoryFragment.getActivity().findViewById(R.id.main_text_id);
+        displayText.setText("you rolled a " + Integer.toString(playerRoll));
+
+    }
+    public void defendButtonHandler(View view)
+    {
+
+    }
+    public void fleeButtonHandler(View view)
+    {
+
     }
 
     public String option1ButtonCheck()

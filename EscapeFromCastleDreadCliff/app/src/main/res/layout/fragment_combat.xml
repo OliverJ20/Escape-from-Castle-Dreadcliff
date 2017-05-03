@@ -22,26 +22,25 @@
                 android:layout_weight="1" >
 
                 <Button
-                    android:id="@+id/movebtn"
+                    android:id="@+id/Attack"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Move"
-                    android:textColor="#DAA520"
-                    android:onClick="onMoveButtonClicked"
+                    android:text="Attack"
+                    android:onClick="attackButtonHandler"
                     android:background="@drawable/button"
-                    android:layout_margin="5dp"
-                    android:padding="5dp" />
+                    android:textColor="#DAA520"
+                    android:layout_margin="5dp" />
 
                 <Button
-                    android:id="@+id/inspBTN"
+                    android:id="@+id/Defend"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Inspect"
-                    android:textColor="#DAA520"
-                    android:onClick="inspectButtonHandler"
+                    android:text="Defend"
+                    android:onClick="defendButtonHandler"
                     android:background="@drawable/button"
+                    android:textColor="#DAA520"
                     android:layout_margin="5dp" />
             </TableRow>
 
@@ -52,24 +51,13 @@
                 android:layout_weight="1" >
 
                 <Button
-                    android:id="@+id/invBTN"
+                    android:id="@+id/Flee"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Inventory"
+                    android:text="Flee"
                     android:textColor="#DAA520"
-                    android:onClick="onInventoryButtonClicked"
-                    android:background="@drawable/button"
-                    android:layout_margin="5dp" />
-
-                <Button
-                    android:id="@+id/combBTN"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Combat"
-                    android:textColor="#DAA520"
-                    android:onClick="combatButtonHandler"
+                    android:onClick="fleeButtonHandler"
                     android:background="@drawable/button"
                     android:layout_margin="5dp" />
             </TableRow>
