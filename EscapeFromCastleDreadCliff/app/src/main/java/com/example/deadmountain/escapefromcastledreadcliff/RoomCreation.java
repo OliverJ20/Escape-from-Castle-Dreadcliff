@@ -6,24 +6,6 @@ import java.util.ArrayList;
  * Created by Jai on 14/03/2017.
  */
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.app.Activity;
-import android.support.v4.text.TextDirectionHeuristicCompat;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import android.util.Log;
-
-import org.w3c.dom.Text;
 public class RoomCreation {
     private ArrayList<Room> allRooms;
     private String[][] RoomOptions = new String[3][3];

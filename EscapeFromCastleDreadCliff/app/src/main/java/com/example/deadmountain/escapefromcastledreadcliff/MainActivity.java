@@ -87,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
         mainMenuFragment = new MainMenuFragment();
         roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
         PlayerItems  = new ArrayList<Integer>();
+
+
+        loadData loaddata = new loadData(this);
+        try {
+            loaddata.loadAll();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
