@@ -80,8 +80,12 @@ public class MainActivity extends AppCompatActivity {
         loadScreenFragment = new LoadScreenFragment();
         inspectOptionFragment = new InspectOptionFragment();
         inspectionFragment =  new InspectionFragment();
-        allRooms = new RoomCreation();
-        allRooms.createAllRooms();
+        allRooms = new RoomCreation(this);
+        try {
+            allRooms.loadRooms();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         roomOption = new RoomOption();
         roomOption.AddRoomOptions(allRooms.getAllRooms());
         mainMenuFragment = new MainMenuFragment();

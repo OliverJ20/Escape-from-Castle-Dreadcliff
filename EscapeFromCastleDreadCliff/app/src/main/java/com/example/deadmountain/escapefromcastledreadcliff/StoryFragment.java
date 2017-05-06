@@ -28,7 +28,6 @@ public class StoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        allRooms = new RoomCreation();
 
 
         View view = inflater.inflate(R.layout.fragment_story, container, false);
