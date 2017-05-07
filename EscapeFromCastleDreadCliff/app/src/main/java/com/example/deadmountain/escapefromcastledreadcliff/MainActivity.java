@@ -530,9 +530,9 @@ public class MainActivity extends AppCompatActivity {
       //  roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
 
         Log.i ("teng DROOOfbdfbgr222", roomDescript);
-        if (roomDescript == "")
+        if (roomDescript.equals("") || roomDescript.equals(null))
         {
-            return backUpRoomDescription;
+            roomDescript = backUpRoomDescription;
         }
         return roomDescript;
 

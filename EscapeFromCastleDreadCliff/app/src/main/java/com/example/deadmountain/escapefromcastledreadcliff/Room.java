@@ -98,7 +98,7 @@ public class Room {
     }
     public String getRoomDescription()
     {
-        return roomDescript;
+        return this.roomDescript;
     }
     public String getRoomInspection() { return roomInspection;}
 
