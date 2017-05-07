@@ -424,7 +424,7 @@ public class MainActivity extends AppCompatActivity {
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(0);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
-                Log.i ("testing DROOOm", roomDescript);
+                Log.i ("testing room descript", roomDescript);
                 backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
@@ -442,7 +442,7 @@ public class MainActivity extends AppCompatActivity {
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(1);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
-                Log.i ("testing DROOOm111", roomDescript);
+                Log.i ("testing room descript", roomDescript);
                 backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
@@ -460,7 +460,7 @@ public class MainActivity extends AppCompatActivity {
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(2);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
-                Log.i ("testing DROOOm", roomDescript);
+                Log.i ("testing room descript", roomDescript);
                 backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
@@ -479,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
             else if (Item == item) {
                 this.PlayerRoom = allRooms.getRoomFromID(this.PlayerRoom).getConnectedRoomID(3);
                 roomDescript = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
-                Log.i ("testing DROOOm333", roomDescript);
+                Log.i ("testing room descript", roomDescript);
                 backUpRoomDescription = allRooms.getRoomFromID(PlayerRoom).getRoomDescription();
             }
         }
